@@ -1,6 +1,7 @@
 package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.block.ModBlocks;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
@@ -26,12 +27,14 @@ public class ModCreativeModeTabs {
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RAW_AZURITE.get()))
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModBlocks.AZURITE_BLOCK.get()))
                     .withTabsBefore(AZURITE_ITEMS_TAB.getId())
                     .title(Component.translatable("creativetab.azurite_blocks"))
                     .displayItems((itemDisplayParameters, output) -> {
 
-                        output.accept(Blocks.HAY_BLOCK);
+                        output.accept(ModBlocks.AZURITE_BLOCK.get());
+                        output.accept(ModBlocks.AZURITE_ORE.get());
+                        output.accept(ModBlocks.AZURITE_DEEPSLATE_ORE.get());
 
                     }).build());
 

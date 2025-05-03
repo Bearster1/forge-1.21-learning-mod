@@ -1,6 +1,7 @@
 package net.bearster.learningmod;
 
 import com.mojang.logging.LogUtils;
+import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -36,6 +37,8 @@ public class LearningMod
         ModCreativeModeTabs.register(modEventBus);
 
         ModItems.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
