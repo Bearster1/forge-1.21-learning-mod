@@ -31,7 +31,13 @@ public class ModBlocks {
             ()-> new DropExperienceBlock(UniformInt.of(3,7),
                     BlockBehaviour.Properties.of().strength(5f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> AZURITE_NETHER_ORE = registerBlock("azurite_nether_ore",
+            ()-> new DropExperienceBlock(UniformInt.of(1,5),
+                    BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
+    public static final RegistryObject<Block> AZURITE_END_ORE = registerBlock("azurite_end_ore",
+            ()-> new DropExperienceBlock(UniformInt.of(5,9),
+                    BlockBehaviour.Properties.of().strength(7f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
 
 
