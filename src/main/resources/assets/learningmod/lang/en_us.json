@@ -3,6 +3,7 @@
   "item.learningmod.raw_azurite": "Raw Azurite",
   "item.learningmod.chainsaw": "Chainsaw",
   "item.learningmod.lightsaber": "Lightsaber",
+  "item.learningmod.onion": "Onion",
 
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
@@ -15,5 +16,6 @@
 
 
   "creativetab.azurite_items": "Azurite Items",
-  "creativetab.azurite_blocks": "Azurite Blocks"
+  "creativetab.azurite_blocks": "Azurite Blocks",
+  "creativetab.custom": "Custom Tab"
 }

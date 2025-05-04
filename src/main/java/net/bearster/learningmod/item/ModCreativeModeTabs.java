@@ -23,7 +23,7 @@ public class ModCreativeModeTabs {
                       output.accept(ModItems.RAW_AZURITE.get());
 
                       output.accept(ModItems.CHAINSAW.get());
-                        output.accept(ModItems.LIGHTSABER.get());
+                        output.accept(ModItems.ONION.get());
 
                     }).build());
 
@@ -40,9 +40,17 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.AZURITE_END_ORE.get());
 
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
-                        output.accept(ModBlocks.TEST_BLOCK.get());
                     }).build());
 
+    public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.LIGHTSABER.get()))
+                    .title(Component.translatable("creativetab.custom"))
+                    .displayItems((itemDisplayParameters, output) -> {
+
+                        output.accept(ModItems.LIGHTSABER.get());
+                        output.accept(ModBlocks.TEST_BLOCK.get());
+
+                    }).build());
 
 
     public static void register(IEventBus eventBus) {

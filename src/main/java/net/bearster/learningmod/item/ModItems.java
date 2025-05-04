@@ -28,6 +28,9 @@ public class ModItems {
             () -> new SwordItem(Tiers.NETHERITE, new Item.Properties()
                     .attributes(SwordItem.createAttributes(Tiers.NETHERITE, 10, -0.3f))));
 
+    public static final RegistryObject<Item> ONION = ITEMS.register("onion",
+            () -> new Item(new Item.Properties().food(ModFoodProperties.ONION)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);
