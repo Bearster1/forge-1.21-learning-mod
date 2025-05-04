@@ -1,6 +1,7 @@
 package net.bearster.learningmod.block;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.block.custom.MagicBlock;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -38,6 +39,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> AZURITE_END_ORE = registerBlock("azurite_end_ore",
             ()-> new DropExperienceBlock(UniformInt.of(5,9),
                     BlockBehaviour.Properties.of().strength(7f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
+
+    public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
 
 
