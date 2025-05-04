@@ -2,6 +2,7 @@ package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.item.custom.ChainsawItem;
+import net.bearster.learningmod.item.custom.FuelItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
@@ -30,6 +31,10 @@ public class ModItems {
 
     public static final RegistryObject<Item> ONION = ITEMS.register("onion",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ONION)));
+
+    public static final RegistryObject<Item> AURORA_ASHES = ITEMS.register("aurora_ashes",
+            () -> new FuelItem(new Item.Properties(), 800));
+
 
 
     public static void register(IEventBus eventBus) {

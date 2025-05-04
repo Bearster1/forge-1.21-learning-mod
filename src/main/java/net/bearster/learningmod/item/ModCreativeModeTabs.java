@@ -18,12 +18,12 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.AZURITE.get()))
                     .title(Component.translatable("creativetab.azurite_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.AZURITE.get());
+                        output.accept(ModItems.RAW_AZURITE.get());
 
-                      output.accept(ModItems.AZURITE.get());
-                      output.accept(ModItems.RAW_AZURITE.get());
-
-                      output.accept(ModItems.CHAINSAW.get());
+                        output.accept(ModItems.CHAINSAW.get());
                         output.accept(ModItems.ONION.get());
+                        output.accept(ModItems.AURORA_ASHES.get());
 
                     }).build());
 
