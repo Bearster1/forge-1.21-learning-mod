@@ -27,7 +27,13 @@ public class ModItems {
 
     public static final RegistryObject<Item> LIGHTSABER = ITEMS.register("lightsaber",
             () -> new SwordItem(Tiers.NETHERITE, new Item.Properties()
-                    .attributes(SwordItem.createAttributes(Tiers.NETHERITE, 10, -0.3f))));
+                    .attributes(SwordItem.createAttributes(Tiers.NETHERITE, 10, -0.3f))) {
+                @Override
+                public void appendHoverText(ItemStack pStack, TooltipContext pContext, List<Component> pTooltipComponents, TooltipFlag pTooltipFlag) {
+                    pTooltipComponents.add(Component.translatable("tooltip.learningmod.lightsaber.tooltip.1"));
+                    super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
+                }
+            });
 
     public static final RegistryObject<Item> ONION = ITEMS.register("onion",
             () -> new Item(new Item.Properties().food(ModFoodProperties.ONION)) {
