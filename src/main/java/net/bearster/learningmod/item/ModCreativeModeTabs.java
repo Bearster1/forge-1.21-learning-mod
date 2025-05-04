@@ -40,6 +40,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.AZURITE_END_ORE.get());
 
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
+                        output.accept(ModBlocks.TEST_BLOCK.get());
                     }).build());
 
 

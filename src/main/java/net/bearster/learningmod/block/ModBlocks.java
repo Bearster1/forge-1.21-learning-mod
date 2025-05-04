@@ -43,6 +43,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
             ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
+    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block",
+            ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {
