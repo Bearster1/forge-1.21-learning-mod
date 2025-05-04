@@ -25,6 +25,7 @@ public class ModCreativeModeTabs {
                       output.accept(ModItems.RAW_AZURITE.get());
 
                       output.accept(ModItems.CHAINSAW.get());
+                        output.accept(ModItems.LIGHTSABER.get());
 
                     }).build());
 
