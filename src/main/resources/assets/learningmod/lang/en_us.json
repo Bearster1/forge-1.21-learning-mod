@@ -18,5 +18,15 @@
 
   "creativetab.azurite_items": "Azurite Items",
   "creativetab.azurite_blocks": "Azurite Blocks",
-  "creativetab.custom": "Custom Tab"
+  "creativetab.custom": "Custom Tab",
+
+  "tooltip.learningmod.chainsaw.tooltip.shift": "Press §eshift§r for more information!",
+  "tooltip.learningmod.chainsaw.tooltip.1": "This Chainsaw will cut down trees fast!",
+  "tooltip.learningmod.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",
+
+  "tooltip.learningmod.onion.tooltip.1": "Tastes Great, for an onion!",
+
+  "tooltip.learningmod.magic_block.tooltip.1": "This Block is §9MAGICAL§r"
+
+
 }
