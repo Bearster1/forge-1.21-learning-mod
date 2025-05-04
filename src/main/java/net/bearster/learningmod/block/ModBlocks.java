@@ -41,9 +41,9 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of().strength(7f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
-            ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
+            ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable()));
 
-    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block",
+    public static final RegistryObject<Block> TEST_BLOCK = registerBlock("test_block.json",
             ()-> new Block(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops()));
 
 
