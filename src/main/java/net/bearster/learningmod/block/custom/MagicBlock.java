@@ -1,6 +1,7 @@
 package net.bearster.learningmod.block.custom;
 
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.util.ModTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -43,8 +44,7 @@ public class MagicBlock extends Block {
     }
 
     private boolean isValidItem(ItemStack item) {
-        return item.getItem() == ModItems.AZURITE.get() || item.getItem() == ModItems.RAW_AZURITE.get()
-                || item.getItem() == Items.COAL;
+        return item.is(ModTags.Items.TRANSFORMABLE_ITEMS);
     }
 
     @Override
