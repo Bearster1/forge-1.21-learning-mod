@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "up": "learningmod:block/test_block_up",
+    "down": "shortsmod:block/test_block_down",
+    "north": "shortsmod:block/test_block_north",
+    "east": "shortsmod:block/test_block_east",
+    "south": "shortsmod:block/test_block_south",
+    "west": "shortsmod:block/test_block_west",
+    "particle": "shortsmod:block/test_block_north"
+  }
+}
