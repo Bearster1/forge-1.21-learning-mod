@@ -47,6 +47,17 @@ public class ModItems {
     public static final RegistryObject<Item> AURORA_ASHES = ITEMS.register("aurora_ashes",
             () -> new FuelItem(new Item.Properties(), 800));
 
+    public static final RegistryObject<Item> AZURITE_SWORD = ITEMS.register("azurite_sword",
+            () -> new SwordItem(ModToolTiers.AZURITE,new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.AZURITE,5, 3f))));
+    public static final RegistryObject<Item> AZURITE_PICKAXE = ITEMS.register("azurite_pickaxe",
+            () -> new PickaxeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.AZURITE,1.0F, -2.8F))));
+    public static final RegistryObject<Item> AZURITE_SHOVEL = ITEMS.register("azurite_shovel",
+            () -> new ShovelItem(ModToolTiers.AZURITE,new Item.Properties().attributes(ShovelItem.createAttributes(ModToolTiers.AZURITE,1.5F, -3.0F))));
+    public static final RegistryObject<Item> AZURITE_AXE = ITEMS.register("azurite_axe",
+            () -> new AxeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.AZURITE,6.0F, -3.2F))));
+    public static final RegistryObject<Item> AZURITE_HOE = ITEMS.register("azurite_hoe",
+            () -> new HoeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.AZURITE,0, -3.0F))));
+
 
 
 

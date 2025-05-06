@@ -6,6 +6,12 @@
   "item.learningmod.onion": "Onion",
   "item.learningmod.aurora_ashes": "Aurora Ashes",
 
+  "item.learningmod.azurite_sword": "Azurite Sword",
+  "item.learningmod.azurite_pickaxe": "Azurite Pickaxe",
+  "item.learningmod.azurite_shovel": "Azurite Shovel",
+  "item.learningmod.azurite_axe": "Azurite Axe",
+  "item.learningmod.azurite_hoe": "Azurite Hoe",
+
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
   "block.learningmod.azurite_deepslate_ore": "Azurite Deepslate Ore",

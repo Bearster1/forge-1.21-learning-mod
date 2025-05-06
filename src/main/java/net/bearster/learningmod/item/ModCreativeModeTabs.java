@@ -25,6 +25,12 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.ONION.get());
                         output.accept(ModItems.AURORA_ASHES.get());
 
+                        output.accept(ModItems.AZURITE_SWORD.get());
+                        output.accept(ModItems.AZURITE_PICKAXE.get());
+                        output.accept(ModItems.AZURITE_SHOVEL.get());
+                        output.accept(ModItems.AZURITE_AXE.get());
+                        output.accept(ModItems.AZURITE_HOE.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
