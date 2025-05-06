@@ -28,7 +28,6 @@ public class ModBlockLootTables extends BlockLootSubProvider {
     protected void generate() {
 
         dropSelf(ModBlocks.AZURITE_BLOCK.get());
-        dropSelf(ModBlocks.TEST_BLOCK.get());
 
         this.add(ModBlocks.AZURITE_ORE.get(),
                 block -> createOreDrop(ModBlocks.AZURITE_ORE.get(), ModItems.RAW_AZURITE.get()));
@@ -38,6 +37,21 @@ public class ModBlockLootTables extends BlockLootSubProvider {
                 block -> createMultipleOreDrops(ModBlocks.AZURITE_END_ORE.get(), ModItems.RAW_AZURITE.get(), 4, 8));
         this.add(ModBlocks.AZURITE_NETHER_ORE.get(),
                 block -> createMultipleOreDrops(ModBlocks.AZURITE_NETHER_ORE.get(), ModItems.RAW_AZURITE.get(), 1, 6));
+
+        this.dropSelf(ModBlocks.AZURITE_STAIRS.get());
+        this.add(ModBlocks.AZURITE_SLAB.get(),
+                block -> createSlabItemTable(ModBlocks.AZURITE_SLAB.get()));
+
+        this.dropSelf(ModBlocks.AZURITE_BUTTON.get());
+        this.dropSelf(ModBlocks.AZURITE_PRESSURE_PLATE.get());
+
+        this.dropSelf(ModBlocks.AZURITE_FENCE.get());
+        this.dropSelf(ModBlocks.AZURITE_FENCE_GATE.get());
+        this.dropSelf(ModBlocks.AZURITE_WALL.get());
+
+        this.dropSelf(ModBlocks.AZURITE_TRAPDOOR.get());
+        this.add(ModBlocks.AZURITE_DOOR.get(),
+                block -> createDoorTable(ModBlocks.AZURITE_DOOR.get()));
 
     }
 

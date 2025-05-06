@@ -13,7 +13,16 @@
   "block.learningmod.azurite_end_ore": "Azurite End Ore",
 
   "block.learningmod.magic_block": "Magic Block",
-  "block.learningmod.test_block": "Test Block",
+
+  "block.learningmod.azurite_stairs": "Azurite Stairs",
+  "block.learningmod.azurite_slab": "Azurite Slab",
+  "block.learningmod.azurite_button": "Azurite Button",
+  "block.learningmod.azurite_pressure_plate": "Azurite Pressure Plate",
+  "block.learningmod.azurite_fence": "Azurite Fence",
+  "block.learningmod.azurite_fence_gate": "Azurite Fence Gate",
+  "block.learningmod.azurite_wall": "Azurite Wall",
+  "block.learningmod.azurite_door": "Azurite Door",
+  "block.learningmod.azurite_trapdoor": "Azurite Trapdoor",
 
 
   "creativetab.azurite_items": "Azurite Items",

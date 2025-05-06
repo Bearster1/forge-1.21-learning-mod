@@ -41,6 +41,28 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
         oreSmelting(recipeOutput, AZURITE_SMELTABLES, RecipeCategory.MISC, ModItems.AZURITE.get(), 0.25f, 200, "azurite");
         oreBlasting(recipeOutput, AZURITE_SMELTABLES, RecipeCategory.MISC, ModItems.AZURITE.get(), 0.25f, 100, "azurite");
+
+        stairBuilder(ModBlocks.AZURITE_STAIRS.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite",has(ModItems.AZURITE.get())).save(recipeOutput);
+        slab(recipeOutput, RecipeCategory.MISC, ModBlocks.AZURITE_SLAB.get(), ModItems.AZURITE.get());
+
+        buttonBuilder(ModBlocks.AZURITE_BUTTON.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite", has(ModItems.AZURITE.get())).save(recipeOutput);
+        pressurePlate(recipeOutput, ModBlocks.AZURITE_PRESSURE_PLATE.get(), ModItems.AZURITE.get());
+
+        fenceBuilder(ModBlocks.AZURITE_FENCE.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite", has(ModItems.AZURITE.get())).save(recipeOutput);
+
+        fenceGateBuilder(ModBlocks.AZURITE_FENCE_GATE.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite", has(ModItems.AZURITE.get())).save(recipeOutput);
+
+        wall(recipeOutput, RecipeCategory.MISC, ModBlocks.AZURITE_WALL.get(), ModItems.AZURITE.get());
+
+        doorBuilder(ModBlocks.AZURITE_DOOR.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite", has(ModItems.AZURITE.get())).save(recipeOutput);
+
+        trapdoorBuilder(ModBlocks.AZURITE_TRAPDOOR.get(), Ingredient.of(ModItems.AZURITE.get())).group("azurite")
+                .unlockedBy("has_azurite", has(ModItems.AZURITE.get())).save(recipeOutput);
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

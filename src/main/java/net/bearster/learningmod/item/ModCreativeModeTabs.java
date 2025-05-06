@@ -40,6 +40,19 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.AZURITE_END_ORE.get());
 
                         output.accept(ModBlocks.MAGIC_BLOCK.get());
+
+                        output.accept(ModBlocks.AZURITE_STAIRS.get());
+                        output.accept(ModBlocks.AZURITE_SLAB.get());
+
+                        output.accept(ModBlocks.AZURITE_PRESSURE_PLATE.get());
+                        output.accept(ModBlocks.AZURITE_BUTTON.get());
+
+                        output.accept(ModBlocks.AZURITE_FENCE.get());
+                        output.accept(ModBlocks.AZURITE_FENCE_GATE.get());
+                        output.accept(ModBlocks.AZURITE_WALL.get());
+
+                        output.accept(ModBlocks.AZURITE_DOOR.get());
+                        output.accept(ModBlocks.AZURITE_TRAPDOOR.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",
@@ -48,7 +61,6 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
 
                         output.accept(ModItems.LIGHTSABER.get());
-                        output.accept(ModBlocks.TEST_BLOCK.get());
 
                     }).build());
 

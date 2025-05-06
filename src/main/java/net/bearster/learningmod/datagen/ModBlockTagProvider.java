@@ -25,7 +25,14 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.AZURITE_END_ORE.get())
                 .add(ModBlocks.AZURITE_NETHER_ORE.get())
                 .add(ModBlocks.MAGIC_BLOCK.get())
-                .add(ModBlocks.TEST_BLOCK.get());
+                .add(ModBlocks.AZURITE_SLAB.get())
+                .add(ModBlocks.AZURITE_STAIRS.get())
+                .add(ModBlocks.AZURITE_BUTTON.get())
+                .add(ModBlocks.AZURITE_PRESSURE_PLATE.get())
+                .add(ModBlocks.AZURITE_FENCE.get())
+                .add(ModBlocks.AZURITE_FENCE_GATE.get())
+                .add(ModBlocks.AZURITE_WALL.get())
+                .add(ModBlocks.AZURITE_DOOR.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.AZURITE_DEEPSLATE_ORE.get());
@@ -33,5 +40,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL)
                 .add(ModBlocks.AZURITE_END_ORE.get())
                 .add(ModBlocks.AZURITE_NETHER_ORE.get());
+
+        this.tag(BlockTags.FENCES).add(ModBlocks.AZURITE_FENCE.get());
+        this.tag(BlockTags.FENCE_GATES).add(ModBlocks.AZURITE_FENCE_GATE.get());
+        this.tag(BlockTags.WALLS).add(ModBlocks.AZURITE_WALL.get());
     }
+
 }
