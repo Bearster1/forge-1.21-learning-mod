@@ -16,6 +16,8 @@ public class ModTags {
         public static final TagKey<Block> NEEDS_AZURITE_TOOL = createTag("needs_azurite_tool");
         public static final TagKey<Block> INCORRECT_FOR_AZURITE_TOOL = createTag("incorrect_for_azurite_tool");
 
+        public static final TagKey<Block> PAXEL_MINEABLE = createTag("mineable/paxel");
+
         private static TagKey<Block> createTag(String name) {
             return BlockTags.create(ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, name));
         }

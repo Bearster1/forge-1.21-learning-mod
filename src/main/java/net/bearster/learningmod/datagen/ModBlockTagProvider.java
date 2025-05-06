@@ -2,6 +2,7 @@ package net.bearster.learningmod.datagen;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -44,6 +45,11 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         this.tag(BlockTags.FENCES).add(ModBlocks.AZURITE_FENCE.get());
         this.tag(BlockTags.FENCE_GATES).add(ModBlocks.AZURITE_FENCE_GATE.get());
         this.tag(BlockTags.WALLS).add(ModBlocks.AZURITE_WALL.get());
+
+        this.tag(ModTags.Blocks.PAXEL_MINEABLE)
+                .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
+                .addTag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .addTag(BlockTags.MINEABLE_WITH_AXE);
     }
 
 }

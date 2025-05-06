@@ -40,6 +40,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.AZURITE_AXE);
         handheldItem(ModItems.AZURITE_HOE);
 
+        handheldItem(ModItems.AZURITE_PAXEL);
+
     }
 
     public void buttonItem(RegistryObject<Block> block, RegistryObject<Block> baseBlock) {

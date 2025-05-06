@@ -3,6 +3,7 @@ package net.bearster.learningmod.item;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.item.custom.ChainsawItem;
 import net.bearster.learningmod.item.custom.FuelItem;
+import net.bearster.learningmod.item.custom.PaxelItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -57,6 +58,9 @@ public class ModItems {
             () -> new AxeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(AxeItem.createAttributes(ModToolTiers.AZURITE,6.0F, -3.2F))));
     public static final RegistryObject<Item> AZURITE_HOE = ITEMS.register("azurite_hoe",
             () -> new HoeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(HoeItem.createAttributes(ModToolTiers.AZURITE,0, -3.0F))));
+
+    public static final RegistryObject<Item> AZURITE_PAXEL = ITEMS.register("azurite_paxel",
+            () -> new PaxelItem(ModToolTiers.AZURITE,new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.AZURITE,2.0F, -2.5F))));
 
 
 
