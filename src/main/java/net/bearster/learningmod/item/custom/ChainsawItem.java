@@ -14,7 +14,7 @@ import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
 import java.util.List;
-//push
+
 public class ChainsawItem extends Item {
     public ChainsawItem(Properties pProperties) {
         super(pProperties);
