@@ -39,8 +39,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         handheldItem(ModItems.AZURITE_SHOVEL);
         handheldItem(ModItems.AZURITE_AXE);
         handheldItem(ModItems.AZURITE_HOE);
-
         handheldItem(ModItems.AZURITE_PAXEL);
+        handheldItem(ModItems.AZURITE_HAMMER);
 
     }
 
