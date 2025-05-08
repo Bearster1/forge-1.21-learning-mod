@@ -70,6 +70,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         trimmedArmorItem(ModItems.AZURITE_LEGGINGS);
         trimmedArmorItem(ModItems.AZURITE_BOOTS);
 
+        basicItem(ModItems.AZURITE_HORSE_ARMOR.get());
+
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
