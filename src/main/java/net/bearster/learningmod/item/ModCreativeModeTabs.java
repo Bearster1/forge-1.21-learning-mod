@@ -35,6 +35,11 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.AZURITE_HAMMER.get());
 
+                        output.accept(ModItems.AZURITE_HELMET.get());
+                        output.accept(ModItems.AZURITE_CHESTPLATE.get());
+                        output.accept(ModItems.AZURITE_LEGGINGS.get());
+                        output.accept(ModItems.AZURITE_BOOTS.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",

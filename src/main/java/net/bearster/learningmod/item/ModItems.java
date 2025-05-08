@@ -1,11 +1,9 @@
 package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
-import net.bearster.learningmod.item.custom.ChainsawItem;
-import net.bearster.learningmod.item.custom.FuelItem;
-import net.bearster.learningmod.item.custom.HammerItem;
-import net.bearster.learningmod.item.custom.PaxelItem;
+import net.bearster.learningmod.item.custom.*;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -50,7 +48,7 @@ public class ModItems {
             () -> new FuelItem(new Item.Properties(), 800));
 
     public static final RegistryObject<Item> AZURITE_SWORD = ITEMS.register("azurite_sword",
-            () -> new SwordItem(ModToolTiers.AZURITE,new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.AZURITE,5, 3f))));
+            () -> new ModEffectSwordItem(ModToolTiers.AZURITE,new Item.Properties().attributes(SwordItem.createAttributes(ModToolTiers.AZURITE,5, 3f)), MobEffects.LEVITATION, 400, 10));
     public static final RegistryObject<Item> AZURITE_PICKAXE = ITEMS.register("azurite_pickaxe",
             () -> new PickaxeItem(ModToolTiers.AZURITE,new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.AZURITE,1.0F, -2.8F))));
     public static final RegistryObject<Item> AZURITE_SHOVEL = ITEMS.register("azurite_shovel",
@@ -65,6 +63,15 @@ public class ModItems {
 
     public static final RegistryObject<Item> AZURITE_HAMMER = ITEMS.register("azurite_hammer",
             () -> new HammerItem(ModToolTiers.AZURITE,new Item.Properties().attributes(PickaxeItem.createAttributes(ModToolTiers.AZURITE,7.0F, -3.5F))));
+
+    public static final RegistryObject<Item> AZURITE_HELMET = ITEMS.register("azurite_helmet",
+            () -> new ArmorItem(ModArmorMaterials.AZURITE_ARMOR_MATERIAL, ArmorItem.Type.HELMET, new Item.Properties().durability(ArmorItem.Type.HELMET.getDurability(11))));
+    public static final RegistryObject<Item> AZURITE_CHESTPLATE = ITEMS.register("azurite_chestplate",
+            () -> new ArmorItem(ModArmorMaterials.AZURITE_ARMOR_MATERIAL, ArmorItem.Type.CHESTPLATE, new Item.Properties().durability(ArmorItem.Type.CHESTPLATE.getDurability(11))));
+    public static final RegistryObject<Item> AZURITE_LEGGINGS = ITEMS.register("azurite_leggings",
+            () -> new ArmorItem(ModArmorMaterials.AZURITE_ARMOR_MATERIAL, ArmorItem.Type.LEGGINGS, new Item.Properties().durability(ArmorItem.Type.LEGGINGS.getDurability(11))));
+    public static final RegistryObject<Item> AZURITE_BOOTS = ITEMS.register("azurite_boots",
+            () -> new ArmorItem(ModArmorMaterials.AZURITE_ARMOR_MATERIAL, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(11))));
 
 
 

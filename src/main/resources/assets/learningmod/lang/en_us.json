@@ -16,6 +16,11 @@
 
   "item.learningmod.azurite_hammer": "Azurite Hammer",
 
+  "item.learningmod.azurite_helmet": "Azurite Helmet",
+  "item.learningmod.azurite_chestplate": "Azurite Chestplate",
+  "item.learningmod.azurite_leggings": "Azurite Leggings",
+  "item.learningmod.azurite_boots": "Azurite Boots",
+
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
   "block.learningmod.azurite_deepslate_ore": "Azurite Deepslate Ore",
