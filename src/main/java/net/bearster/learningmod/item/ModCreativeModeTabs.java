@@ -72,6 +72,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.AZURITE_DOOR.get());
                         output.accept(ModBlocks.AZURITE_TRAPDOOR.get());
+
+                        output.accept(ModBlocks.AZURITE_LAMP.get());
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",

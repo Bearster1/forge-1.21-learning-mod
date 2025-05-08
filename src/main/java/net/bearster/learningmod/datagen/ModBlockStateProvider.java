@@ -3,6 +3,7 @@ package net.bearster.learningmod.datagen;
 import com.google.gson.JsonElement;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.block.custom.AzuriteLampBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.models.blockstates.BlockStateGenerator;
 import net.minecraft.data.models.blockstates.MultiVariantGenerator;
@@ -14,6 +15,7 @@ import net.minecraft.data.models.model.TextureSlot;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
+import net.minecraftforge.client.model.generators.ConfiguredModel;
 import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -62,6 +64,22 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockItem(ModBlocks.AZURITE_PRESSURE_PLATE);
         blockItem(ModBlocks.AZURITE_FENCE_GATE);
         blockItem(ModBlocks.AZURITE_TRAPDOOR, "_bottom");
+
+        customLamp();
+    }
+
+    private void customLamp() {
+        getVariantBuilder(ModBlocks.AZURITE_LAMP.get()).forAllStates(state -> {
+            if (state.getValue(AzuriteLampBlock.CLICKED)) {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("azurite_lamp_on",
+                        ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, "block/" + "azurite_lamp_on")))};
+            } else {
+                return new ConfiguredModel[]{new ConfiguredModel(models().cubeAll("azurite_lamp_off",
+                        ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, "block/" + "azurite_lamp_off")))};
+            }
+        });
+        simpleBlockItem(ModBlocks.AZURITE_LAMP.get(), models().cubeAll("azurite_lamp_on",
+                ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, "block/" + "azurite_lamp_on")));
     }
 
     private void blockWithItem(RegistryObject<Block> blockRegistryObject) {

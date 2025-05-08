@@ -1,6 +1,7 @@
 package net.bearster.learningmod.block;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.block.custom.AzuriteLampBlock;
 import net.bearster.learningmod.block.custom.MagicBlock;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -70,6 +71,10 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> AZURITE_TRAPDOOR = registerBlock("azurite_trapdoor",
             ()-> new TrapDoorBlock(BlockSetType.IRON,BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noOcclusion()));
+
+    public static final RegistryObject<Block> AZURITE_LAMP = registerBlock("azurite_lamp",
+            () -> new AzuriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
+                    .lightLevel(state -> state.getValue(AzuriteLampBlock.CLICKED) ? 15 : 0)));
 
 
 

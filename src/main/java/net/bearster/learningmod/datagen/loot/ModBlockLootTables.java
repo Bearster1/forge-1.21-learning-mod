@@ -50,8 +50,11 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.AZURITE_WALL.get());
 
         this.dropSelf(ModBlocks.AZURITE_TRAPDOOR.get());
+
         this.add(ModBlocks.AZURITE_DOOR.get(),
                 block -> createDoorTable(ModBlocks.AZURITE_DOOR.get()));
+
+        this.dropSelf(ModBlocks.AZURITE_LAMP.get());
 
     }
 
