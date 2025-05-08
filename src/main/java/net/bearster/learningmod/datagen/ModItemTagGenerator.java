@@ -29,5 +29,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(Items.STICK)
                 .add(Items.COMPASS)
                 .addTag(ItemTags.PLANKS);
+
+        this.tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.AZURITE_HELMET.get())
+                .add(ModItems.AZURITE_CHESTPLATE.get())
+                .add(ModItems.AZURITE_LEGGINGS.get())
+                .add(ModItems.AZURITE_BOOTS.get());
     }
 }
