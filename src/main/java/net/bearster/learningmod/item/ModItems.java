@@ -3,6 +3,7 @@ package net.bearster.learningmod.item;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.item.custom.*;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -75,6 +76,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> AZURITE_HORSE_ARMOR = ITEMS.register("azurite_horse_armor",
             () -> new AnimalArmorItem(ModArmorMaterials.AZURITE_ARMOR_MATERIAL, AnimalArmorItem.BodyType.EQUESTRIAN, false, new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> KAUPEN_SMITHING_TEMPLATE = ITEMS.register("kaupen_armor_trim_smithing_template",
+            () -> SmithingTemplateItem.createArmorTrimTemplate(ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, "kaupen")));
 
 
 

@@ -35,5 +35,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
                 .add(ModItems.AZURITE_CHESTPLATE.get())
                 .add(ModItems.AZURITE_LEGGINGS.get())
                 .add(ModItems.AZURITE_BOOTS.get());
+
+        this.tag(ItemTags.TRIM_MATERIALS)
+                .add(ModItems.AZURITE.get());
+
+        this.tag(ItemTags.TRIM_TEMPLATES)
+                .add(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
     }
 }
