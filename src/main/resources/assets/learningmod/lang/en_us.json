@@ -25,6 +25,9 @@
 
   "item.learningmod.kaupen_armor_trim_smithing_template": "Kaupen Trim Template",
 
+  "item.learningmod.metal_detector": "Metal Detector",
+  "item.learningmod.data_tablet": "Data Tablet",
+
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
   "block.learningmod.azurite_deepslate_ore": "Azurite Deepslate Ore",
@@ -60,7 +63,9 @@
 
   "tooltip.learningmod.onion.tooltip.1": "Tastes Great, for an onion!",
 
-  "tooltip.learningmod.magic_block.tooltip.1": "This Block is §9MAGICAL§r"
+  "tooltip.learningmod.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
+
+  "item.learningmod.metal_detector.no_valuables": "No Valuables Found!"
 
 
 }

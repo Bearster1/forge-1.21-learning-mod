@@ -18,6 +18,7 @@ import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
+import org.checkerframework.checker.units.qual.N;
 
 import java.util.LinkedHashMap;
 
@@ -73,6 +74,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.AZURITE_HORSE_ARMOR.get());
 
         basicItem(ModItems.KAUPEN_SMITHING_TEMPLATE.get());
+
+        basicItem(ModItems.METAL_DETECTOR.get());
+        basicItem(ModItems.DATA_TABLET.get());
 
     }
 

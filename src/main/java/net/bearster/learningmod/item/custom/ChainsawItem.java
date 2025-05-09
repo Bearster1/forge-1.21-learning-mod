@@ -1,5 +1,6 @@
 package net.bearster.learningmod.item.custom;
 
+import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
@@ -31,7 +32,13 @@ public class ChainsawItem extends Item {
                 pContext.getItemInHand().hurtAndBreak(1, ((ServerLevel) level),
                         ((ServerPlayer) pContext.getPlayer()), item ->
                         pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
+
+                pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
             }
+        }
+
+        if (level.getBlockState(pContext.getClickedPos()).is(BlockTags.LOGS)) {
+            pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
         }
 
         return InteractionResult.CONSUME;
@@ -44,6 +51,10 @@ public class ChainsawItem extends Item {
         } else {
             pTooltipComponents.add(Component.translatable("tooltip.learningmod.chainsaw.tooltip.1"));
             pTooltipComponents.add(Component.translatable("tooltip.learningmod.chainsaw.tooltip.2"));
+        }
+
+        if (pStack.get(ModDataComponentTypes.COORDINATES.get()) !=null) {
+            pTooltipComponents.add(Component.literal("Last Tree was chopped at "+pStack.get(ModDataComponentTypes.COORDINATES.get())));
         }
 
         super.appendHoverText(pStack, pContext, pTooltipComponents, pTooltipFlag);
