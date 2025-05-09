@@ -5,6 +5,7 @@ import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -76,6 +77,7 @@ public class LearningMod
     {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
+            ModItemProperties.addCustomItemProperties();
 
 
         }
