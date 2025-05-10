@@ -86,6 +86,9 @@ public class ModItems {
     public static final RegistryObject<Item> DATA_TABLET = ITEMS.register("data_tablet",
             () -> new DataTabletItem(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> AZURITE_BOW = ITEMS.register("azurite_bow",
+            () -> new BowItem(new Item.Properties().durability(250)));
+
 
 
     public static void register(IEventBus eventBus) {
