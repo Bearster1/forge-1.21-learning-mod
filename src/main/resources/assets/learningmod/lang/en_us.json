@@ -54,6 +54,9 @@
 
   "block.learningmod.onion_crop": "Onion Crop",
 
+  "block.learningmod.catmint": "Catmint",
+  "block.learningmod.potted_catmint": "Potted Catmint",
+
   "creativetab.azurite_items": "Azurite Items",
   "creativetab.azurite_blocks": "Azurite Blocks",
   "creativetab.custom": "Custom Tab",

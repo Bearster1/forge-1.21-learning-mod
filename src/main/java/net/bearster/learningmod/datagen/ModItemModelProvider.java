@@ -79,6 +79,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.ONION_SEEDS.get());
 
+        simpleBlockBlockItem(ModBlocks.CATMINT);
+
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {
@@ -148,6 +150,12 @@ public class ModItemModelProvider extends ItemModelProvider {
         return withExistingParent(item.getId().getPath(),
                 ResourceLocation.parse("item/handheld")).texture("layer0",
                 ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID,"item/" + item.getId().getPath()));
+    }
+
+    private ItemModelBuilder simpleBlockBlockItem(RegistryObject<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, "block/" + item.getId().getPath()));
     }
 
     private ItemModelBuilder simpleBlockItem(RegistryObject<Block> item) {
