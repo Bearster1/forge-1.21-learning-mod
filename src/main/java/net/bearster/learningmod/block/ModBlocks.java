@@ -3,6 +3,7 @@ package net.bearster.learningmod.block;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.custom.AzuriteLampBlock;
 import net.bearster.learningmod.block.custom.MagicBlock;
+import net.bearster.learningmod.block.custom.OnionCropBlock;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -75,6 +76,11 @@ public class ModBlocks {
     public static final RegistryObject<Block> AZURITE_LAMP = registerBlock("azurite_lamp",
             () -> new AzuriteLampBlock(BlockBehaviour.Properties.of().strength(3f)
                     .lightLevel(state -> state.getValue(AzuriteLampBlock.CLICKED) ? 15 : 0)));
+
+    public static final RegistryObject<Block> ONION_CROP = BLOCKS.register("onion_crop",
+            () -> new OnionCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
+
+
 
 
 

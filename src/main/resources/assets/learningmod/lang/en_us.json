@@ -30,6 +30,8 @@
 
   "item.learningmod.azurite_bow": "Azurite Bow",
 
+  "item.learningmod.onion_seeds": "Onion Seeds",
+
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
   "block.learningmod.azurite_deepslate_ore": "Azurite Deepslate Ore",
@@ -49,6 +51,8 @@
   "block.learningmod.azurite_trapdoor": "Azurite Trapdoor",
 
   "block.learningmod.azurite_lamp": "Azurite Lamp",
+
+  "block.learningmod.onion_crop": "Onion Crop",
 
   "creativetab.azurite_items": "Azurite Items",
   "creativetab.azurite_blocks": "Azurite Blocks",

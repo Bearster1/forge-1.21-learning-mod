@@ -1,6 +1,7 @@
 package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.item.custom.*;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
@@ -88,6 +89,9 @@ public class ModItems {
 
     public static final RegistryObject<Item> AZURITE_BOW = ITEMS.register("azurite_bow",
             () -> new BowItem(new Item.Properties().durability(250)));
+
+    public static final RegistryObject<Item> ONION_SEEDS = ITEMS.register("onion_seeds",
+            () -> new ItemNameBlockItem(ModBlocks.ONION_CROP.get(),new Item.Properties()));
 
 
 
