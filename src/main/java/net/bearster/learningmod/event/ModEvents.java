@@ -1,12 +1,22 @@
 package net.bearster.learningmod.event;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.item.custom.HammerItem;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
+import net.minecraftforge.client.event.ClientChatEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.level.BlockEvent;
+import net.minecraftforge.eventbus.api.Event;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
@@ -40,4 +50,28 @@ public class ModEvents {
             }
         }
     }
+
+    @SubscribeEvent
+    public static void livingDamage(LivingDamageEvent event) {
+        if (event.getEntity() instanceof Sheep sheep) {
+            if (event.getSource().getDirectEntity() instanceof Player player) {
+                if (player.getMainHandItem().getItem() == ModItems.METAL_DETECTOR.get()) {
+                    player.sendSystemMessage(Component.literal(player.getName().getString() + " just hit a Sheep with a metal detector"));
+                }
+
+                if (player.getMainHandItem().getItem() == ModItems.ONION.get()) {
+                    player.sendSystemMessage(Component.literal(player.getName().getString() + " just hit a Sheep with an onion"));
+                    sheep.addEffect(new MobEffectInstance(MobEffects.GLOWING, 400, 1, false, false));
+                    player.getMainHandItem().shrink(1);
+                }
+
+                if (player.getMainHandItem().getItem() == Items.END_ROD) {
+                    player.sendSystemMessage(Component.literal(player.getName().getString() + " just hit a Sheep with AN END ROD?"));
+                    sheep.addEffect(new MobEffectInstance(MobEffects.POISON, 400, 1, false, false));
+                    player.getMainHandItem().shrink(1);
+                }
+            }
+        }
+    }
+
 }
