@@ -6,11 +6,14 @@ import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.util.ModItemProperties;
+import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.CreativeModeTabs;
+import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
@@ -87,6 +90,18 @@ public class LearningMod
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
 
+
+        }
+
+        @SubscribeEvent
+        public static void registerColoredBlocks(RegisterColorHandlersEvent.Block event) {
+            event.register((pState, pLevel, pPos, pTintIndex) -> pLevel != null &&
+                    pPos != null ? BiomeColors.getAverageFoliageColor(pLevel, pPos) : FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES.get());
+        }
+
+        @SubscribeEvent
+        public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
+            event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES.get());
 
         }
     }

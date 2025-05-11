@@ -6,6 +6,8 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.RegistryObject;
@@ -83,6 +85,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.AZURITE_LAMP.get());
 
                         output.accept(ModBlocks.CATMINT.get());
+
+                        output.accept(ModBlocks.COLORED_LEAVES.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",
