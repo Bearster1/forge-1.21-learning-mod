@@ -11,5 +11,40 @@
     "sounds": [
       "learningmod:chainsaw_pull"
     ]
+  },
+
+  "magic_block_break": {
+    "subtitle": "sounds.learningmod.magic_block_break",
+    "sounds": [
+      "learningmod:magic_block_break"
+    ]
+  },
+
+  "magic_block_step": {
+    "subtitle": "learningmod.magic_block_step",
+    "sounds": [
+      "learningmod:magic_block_step"
+    ]
+  },
+
+  "magic_block_place": {
+    "subtitle": "learningmod.magic_block_place",
+    "sounds": [
+      "learningmod:magic_block_place"
+    ]
+  },
+
+  "magic_block_hit": {
+    "subtitle": "learningmod.magic_block_hit",
+    "sounds": [
+      "learningmod:magic_block_hit"
+    ]
+  },
+
+  "magic_block_fall": {
+    "subtitle": "learningmod.magic_block_fall",
+    "sounds": [
+      "learningmod:magic_block_fall"
+    ]
   }
 }

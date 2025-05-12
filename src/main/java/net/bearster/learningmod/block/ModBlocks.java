@@ -5,6 +5,7 @@ import net.bearster.learningmod.block.custom.AzuriteLampBlock;
 import net.bearster.learningmod.block.custom.MagicBlock;
 import net.bearster.learningmod.block.custom.OnionCropBlock;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
@@ -44,7 +45,7 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of().strength(7f).requiresCorrectToolForDrops().sound(SoundType.AMETHYST)));
 
     public static final RegistryObject<Block> MAGIC_BLOCK = registerBlock("magic_block",
-            ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable()));
+            ()-> new MagicBlock(BlockBehaviour.Properties.of().strength(4f).requiresCorrectToolForDrops().noLootTable().sound(ModSounds.MAGIC_BLOCK_SOUNDS)));
 
     public static final RegistryObject<Block> AZURITE_STAIRS = registerBlock("azurite_stairs",
             ()-> new StairBlock(ModBlocks.AZURITE_BLOCK.get().defaultBlockState(),
