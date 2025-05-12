@@ -5,6 +5,7 @@ import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -49,6 +50,8 @@ public class LearningMod
         ModBlocks.register(modEventBus);
 
         ModDataComponentTypes.register(modEventBus);
+
+        ModSounds.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

@@ -1,0 +1,15 @@
+{
+  "chainsaw_cut": {
+    "subtitle": "sounds.learningmod.chainsaw_cut",
+    "sounds": [
+      "learningmod:chainsaw_cut"
+    ]
+  },
+
+  "chainsaw_pull": {
+    "subtitle": "sounds.learningmod.chainsaw_pull",
+    "sounds": [
+      "learningmod:chainsaw_pull"
+    ]
+  }
+}

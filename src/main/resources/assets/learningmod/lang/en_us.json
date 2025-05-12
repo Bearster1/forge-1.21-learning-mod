@@ -66,6 +66,9 @@
   "trim_pattern.learningmod.kaupen": "Kaupen Armor Trim",
   "trim_material.learningmod.azurite": "Azurite Material",
 
+  "sounds.learningmod.chainsaw_cut": "Chainsaw Sounds",
+  "sounds.learningmod.chainsaw_pull": "Pull Chainsaw Sounds",
+
   "tooltip.learningmod.chainsaw.tooltip.shift": "Press §eshift§r for more information!",
   "tooltip.learningmod.chainsaw.tooltip.1": "This Chainsaw will cut down trees fast!",
   "tooltip.learningmod.chainsaw.tooltip.2": "§oChainsaw go vroom!§r",

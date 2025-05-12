@@ -1,10 +1,12 @@
 package net.bearster.learningmod.item.custom;
 
 import net.bearster.learningmod.component.ModDataComponentTypes;
+import net.bearster.learningmod.sound.ModSounds;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -34,6 +36,11 @@ public class ChainsawItem extends Item {
                         pContext.getPlayer().onEquippedItemBroken(item, EquipmentSlot.MAINHAND));
 
                 pContext.getItemInHand().set(ModDataComponentTypes.COORDINATES.get(), pContext.getClickedPos());
+
+                pContext.getLevel().playSound(null, pContext.getPlayer().blockPosition(), ModSounds.CHAINSAW_CUT.get(),
+                        SoundSource.PLAYERS, 1f, 1f);
+            } else {
+                pContext.getLevel().playSound(null, pContext.getPlayer().blockPosition(), ModSounds.CHAINSAW_PULL.get(), SoundSource.PLAYERS, 1f, 1f);
             }
         }
 
