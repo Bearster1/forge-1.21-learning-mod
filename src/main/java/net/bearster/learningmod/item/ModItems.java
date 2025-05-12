@@ -3,6 +3,7 @@ package net.bearster.learningmod.item;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.item.custom.*;
+import net.bearster.learningmod.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
@@ -92,6 +93,12 @@ public class ModItems {
 
     public static final RegistryObject<Item> ONION_SEEDS = ITEMS.register("onion_seeds",
             () -> new ItemNameBlockItem(ModBlocks.ONION_CROP.get(),new Item.Properties()));
+
+    public static final RegistryObject<Item> BAR_BRAWL_MUSIC_DISC = ITEMS.register("bar_brawl_music_disc",
+            () -> new Item(new Item.Properties().stacksTo(1).jukeboxPlayable(ModSounds.BAR_BRAWL_KEY)));
+
+    public static final RegistryObject<Item> JETZ_CULT_MUSIC_DISC = ITEMS.register("jetz_cult_music_disc",
+            () -> new Item(new Item.Properties().stacksTo(1).jukeboxPlayable(ModSounds.JETZ_CULT_KEY)));
 
 
 

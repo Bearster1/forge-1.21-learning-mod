@@ -46,5 +46,23 @@
     "sounds": [
       "learningmod:magic_block_fall"
     ]
+  },
+
+  "bar_brawl": {
+    "sounds": [
+      {
+        "name": "learningmod:bar_brawl",
+        "stream": true
+      }
+    ]
+  },
+
+  "jetz_cult": {
+    "sounds": [
+      {
+        "name": "learningmod:jetz_cult",
+        "stream": true
+      }
+    ]
   }
 }

@@ -82,6 +82,10 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         simpleBlockBlockItem(ModBlocks.CATMINT);
 
+        basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
+
+        basicItem(ModItems.JETZ_CULT_MUSIC_DISC.get());
+
     }
 
     private void trimmedArmorItem(RegistryObject<Item> itemRegistryObject) {

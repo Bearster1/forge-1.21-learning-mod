@@ -1,0 +1,8 @@
+{
+  "comparator_output": 15,
+  "description": {
+    "translate": "item.learningmod.jetz_cult_music_disc.desc"
+  },
+  "length_in_seconds": 23.0,
+  "sound_event": "learningmod:jetz_cult"
+}
