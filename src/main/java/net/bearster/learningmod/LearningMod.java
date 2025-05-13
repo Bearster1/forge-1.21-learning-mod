@@ -3,8 +3,10 @@ package net.bearster.learningmod;
 import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.component.ModDataComponentTypes;
+import net.bearster.learningmod.effect.ModEffects;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.potion.ModPotions;
 import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
 import net.minecraft.client.renderer.BiomeColors;
@@ -52,6 +54,10 @@ public class LearningMod
         ModDataComponentTypes.register(modEventBus);
 
         ModSounds.register(modEventBus);
+
+        ModEffects.register(modEventBus);
+
+        ModPotions.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);

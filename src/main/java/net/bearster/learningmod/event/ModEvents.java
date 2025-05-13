@@ -5,6 +5,7 @@ import net.bearster.learningmod.command.ReturnHomeCommand;
 import net.bearster.learningmod.command.SetHomeCommand;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.item.custom.HammerItem;
+import net.bearster.learningmod.potion.ModPotions;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerPlayer;
@@ -14,7 +15,10 @@ import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.alchemy.PotionBrewing;
+import net.minecraft.world.item.alchemy.Potions;
 import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.event.brewing.BrewingRecipeRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingDamageEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.BlockEvent;
@@ -42,6 +46,13 @@ public class ModEvents {
     public static void onPlayerCloned(PlayerEvent.Clone event) {
         event.getEntity().getPersistentData().putIntArray("learningmod.homepos",
                 event.getOriginal().getPersistentData().getIntArray("learningmod.homepos"));
+    }
+
+    @SubscribeEvent
+    public static void onBrewingRecipeRegister(BrewingRecipeRegisterEvent event) {
+        PotionBrewing.Builder builder = event.getBuilder();
+
+        builder.addMix(Potions.AWKWARD, Items.SLIME_BALL, ModPotions.SLIMEY_POTION.getHolder().get());
     }
 
     @SubscribeEvent

@@ -41,6 +41,10 @@
   "item.learningmod.spectre_staff": "Spectre Staff",
   "item.learningmod.sword": "Sword",
 
+  "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
+  "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
+  "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
+
   "block.learningmod.azurite_block": "Block of Azurite",
   "block.learningmod.azurite_ore": "Azurite Ore",
   "block.learningmod.azurite_deepslate_ore": "Azurite Deepslate Ore",
@@ -70,6 +74,8 @@
 
   "block.learningmod.pedestal": "Pedestal",
   "block.learningmod.triforce": "Triforce",
+
+  "effect.learningmod.slimey": "Slimey",
 
   "creativetab.azurite_items": "Azurite Items",
   "creativetab.azurite_blocks": "Azurite Blocks",
