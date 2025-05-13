@@ -90,6 +90,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.COLORED_LEAVES.get());
 
+                        output.accept(ModBlocks.PEDESTAL.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",
@@ -99,7 +101,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.LIGHTSABER.get());
 
-                        output.accept(ModItems.J0J0JETZ_CLUB_MUSIC_DISC .get());
+                        output.accept(ModItems.J0J0JETZ_CLUB_MUSIC_DISC.get());
+                        output.accept(ModBlocks.TRIFORCE.get());
 
                     }).build());
 

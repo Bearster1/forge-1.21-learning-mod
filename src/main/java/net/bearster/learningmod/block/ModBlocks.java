@@ -1,9 +1,7 @@
 package net.bearster.learningmod.block;
 
 import net.bearster.learningmod.LearningMod;
-import net.bearster.learningmod.block.custom.AzuriteLampBlock;
-import net.bearster.learningmod.block.custom.MagicBlock;
-import net.bearster.learningmod.block.custom.OnionCropBlock;
+import net.bearster.learningmod.block.custom.*;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.sound.ModSounds;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -89,6 +87,12 @@ public class ModBlocks {
 
     public static final RegistryObject<Block> COLORED_LEAVES = registerBlock("colored_leaves",
             () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.AZALEA_LEAVES)));
+
+    public static final RegistryObject<Block> PEDESTAL = registerBlock("pedestal",
+            ()-> new PedestalBlock(BlockBehaviour.Properties.of().strength(4f).noOcclusion()));
+
+    public static final RegistryObject<Block> TRIFORCE = registerBlock("triforce",
+            () -> new TriforceBlock(BlockBehaviour.Properties.of().strength(4f).noOcclusion()));
 
 
 
