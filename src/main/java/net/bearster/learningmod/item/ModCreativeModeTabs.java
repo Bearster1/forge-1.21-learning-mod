@@ -99,7 +99,7 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.LIGHTSABER.get());
 
-                        output.accept(ModItems.JETZ_CULT_MUSIC_DISC.get());
+                        output.accept(ModItems.J0J0JETZ_CLUB_MUSIC_DISC .get());
 
                     }).build());
 

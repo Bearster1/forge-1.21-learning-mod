@@ -84,7 +84,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
-        basicItem(ModItems.JETZ_CULT_MUSIC_DISC.get());
+        basicItem(ModItems.J0J0JETZ_CLUB_MUSIC_DISC.get());
 
     }
 

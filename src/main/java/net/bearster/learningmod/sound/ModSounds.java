@@ -32,8 +32,8 @@ public class ModSounds {
     public static final RegistryObject<SoundEvent> BAR_BRAWL = registerSoundEvent("bar_brawl");
     public static final ResourceKey<JukeboxSong> BAR_BRAWL_KEY = createSong("bar_brawl");
 
-    public static final RegistryObject<SoundEvent> JETZ_CULT = registerSoundEvent("jetz_cult");
-    public static final ResourceKey<JukeboxSong> JETZ_CULT_KEY = createSong("jetz_cult");
+    public static final RegistryObject<SoundEvent> J0J0JETZ_CLUB = registerSoundEvent("j0j0jetz_club");
+    public static final ResourceKey<JukeboxSong> JOJOJETZ_CLUB_KEY = createSong("j0j0jetz_club");
 
     private static ResourceKey<JukeboxSong> createSong(String name) {
         return ResourceKey.create(Registries.JUKEBOX_SONG, ResourceLocation.fromNamespaceAndPath(LearningMod.MOD_ID, name));
