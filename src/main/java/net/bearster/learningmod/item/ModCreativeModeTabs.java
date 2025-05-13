@@ -55,6 +55,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
+                        output.accept(ModItems.SPECTRE_STAFF.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
@@ -103,6 +105,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.J0J0JETZ_CLUB_MUSIC_DISC.get());
                         output.accept(ModBlocks.TRIFORCE.get());
+
+                        output.accept(ModItems.SWORD.get());
 
                     }).build());
 

@@ -100,6 +100,12 @@ public class ModItems {
     public static final RegistryObject<Item> J0J0JETZ_CLUB_MUSIC_DISC = ITEMS.register("j0j0jetz_club_music_disc",
             () -> new Item(new Item.Properties().stacksTo(1).jukeboxPlayable(ModSounds.JOJOJETZ_CLUB_KEY)));
 
+    public static final RegistryObject<Item> SPECTRE_STAFF = ITEMS.register("spectre_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
+    public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
 
 
     public static void register(IEventBus eventBus) {
