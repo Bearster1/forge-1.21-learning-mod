@@ -9,6 +9,7 @@ import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.potion.ModPotions;
 import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
+import net.bearster.learningmod.villager.ModVillagers;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.FoliageColor;
@@ -58,6 +59,8 @@ public class LearningMod
         ModEffects.register(modEventBus);
 
         ModPotions.register(modEventBus);
+
+        ModVillagers.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
