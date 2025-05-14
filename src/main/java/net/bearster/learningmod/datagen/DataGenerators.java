@@ -1,12 +1,10 @@
 package net.bearster.learningmod.datagen;
 
-import com.google.gson.JsonElement;
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.datagen.paintings.ModPaintingGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.blockstates.BlockStateGenerator;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.common.data.BlockTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.data.event.GatherDataEvent;
@@ -14,7 +12,6 @@ import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 
 import java.util.concurrent.CompletableFuture;
-import java.util.function.Consumer;
 
 @Mod.EventBusSubscriber(modid = LearningMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class DataGenerators {
@@ -37,5 +34,6 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
+        ModPaintingGenerator.createPaintings();
     }
 }

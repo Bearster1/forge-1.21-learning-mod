@@ -83,20 +83,7 @@
 
   "trim_pattern.learningmod.kaupen": "Kaupen Armor Trim",
   "trim_material.learningmod.azurite": "Azurite Material",
-
-  "painting.learningmod.world.title": "World",
-  "painting.learningmod.world.author": "NanoAttack",
-  "painting.learningmod.shrimp.title": "Shrimp",
-  "painting.learningmod.shrimp.author": "NanoAttack",
-  "painting.learningmod.saw_them.title": "Saw Them",
-  "painting.learningmod.saw_them.author": "NanoAttack",
-
-  "painting.learningmod.wanderer.title": "Wanderer",
-  "painting.learningmod.wanderer.author": "PlatinumG17",
-
-  "painting.learningmod.jojo_botw.title": "J0J0Jetz in BOTW",
-  "painting.learningmod.jojo_botw.author": "J0J0Jetz",
-
+  
   "entity.minecraft.villager.learningmod.kaupenger": "Kaupenger",
 
   "sounds.learningmod.chainsaw_cut": "Chainsaw Sounds",
@@ -112,7 +99,23 @@
 
   "tooltip.learningmod.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
 
-  "item.learningmod.metal_detector.no_valuables": "No Valuables Found!"
-
-
+  "item.learningmod.metal_detector.no_valuables": "No Valuables Found!",
+  
+  "painting.learningmod.jojo_botw.title":"J0J0Jetz in BOTW",
+  "painting.learningmod.jojo_botw.author":"J0J0Jetz",
+  
+  "painting.learningmod.jojo_knight.title":"J0J0Jetz getting knighted",
+  "painting.learningmod.jojo_knight.author":"HobbyBox",
+  
+  "painting.learningmod.shrimp.title":"Shrimp",
+  "painting.learningmod.shrimp.author":"NanoAttack",
+  
+  "painting.learningmod.saw_them.title":"Saw Them",
+  "painting.learningmod.saw_them.author":"NanoAttack",
+  
+  "painting.learningmod.wanderer.title":"Wanderer",
+  "painting.learningmod.wanderer.author":"PlatinumG17",
+  
+  "painting.learningmod.world.title":"World",
+  "painting.learningmod.world.author":"NanoAttack"
 }
