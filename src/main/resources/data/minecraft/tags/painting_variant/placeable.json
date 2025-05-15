@@ -1,10 +1,10 @@
 {
   "values": [
-    "learningmod:jojo_botw",
-    "learningmod:jojo_knight",
     "learningmod:shrimp",
     "learningmod:saw_them",
+    "learningmod:world",
     "learningmod:wanderer",
-    "learningmod:world"
- ]
+
+    "learningmod:jojo_botw"
+  ]
 }
