@@ -2,6 +2,7 @@ package net.bearster.learningmod.datagen;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceKey;
@@ -85,6 +86,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
         basicItem(ModItems.J0J0JETZ_CLUB_MUSIC_DISC.get());
+
+        basicItem(ModFluids.AZURITE_WATER_BUCKET.get());
 
     }
 

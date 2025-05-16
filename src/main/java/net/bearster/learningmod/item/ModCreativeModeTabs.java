@@ -2,6 +2,7 @@ package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.potion.ModPotions;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -58,6 +59,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BAR_BRAWL_MUSIC_DISC.get());
 
                         output.accept(ModItems.SPECTRE_STAFF.get());
+
+                        output.accept(ModFluids.AZURITE_WATER_BUCKET.get());
 
                     }).build());
 
