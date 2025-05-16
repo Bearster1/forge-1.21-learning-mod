@@ -117,6 +117,11 @@ public class ModEvents {
                     new ItemCost(ModItems.AZURITE.get(), 32),
                     new ItemStack(ModItems.SPECTRE_STAFF.get(), 1), 1, 8, 0.025f
             ));
+
+            trades.get(4).add((pTrader, pRandom) -> new MerchantOffer(
+                    new ItemCost(ModItems.AZURITE.get(), 64),
+                    new ItemStack(ModItems.RADIATION_STAFF.get(), 1), 1, 8, 0.025f
+            ));
         }
     }
 

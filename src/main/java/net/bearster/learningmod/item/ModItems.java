@@ -103,6 +103,9 @@ public class ModItems {
     public static final RegistryObject<Item> SPECTRE_STAFF = ITEMS.register("spectre_staff",
             () -> new Item(new Item.Properties().stacksTo(1)));
 
+    public static final RegistryObject<Item> RADIATION_STAFF = ITEMS.register("radiation_staff",
+            () -> new Item(new Item.Properties().stacksTo(1)));
+
     public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
             () -> new Item(new Item.Properties().stacksTo(1)));
 

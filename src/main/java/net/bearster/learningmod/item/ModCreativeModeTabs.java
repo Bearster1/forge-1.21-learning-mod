@@ -60,6 +60,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModItems.SPECTRE_STAFF.get());
 
+                        output.accept(ModItems.RADIATION_STAFF.get());
+
                         output.accept(ModFluids.AZURITE_WATER_BUCKET.get());
 
                     }).build());
