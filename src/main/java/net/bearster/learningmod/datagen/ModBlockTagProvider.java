@@ -33,7 +33,8 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.AZURITE_FENCE.get())
                 .add(ModBlocks.AZURITE_FENCE_GATE.get())
                 .add(ModBlocks.AZURITE_WALL.get())
-                .add(ModBlocks.AZURITE_DOOR.get());
+                .add(ModBlocks.AZURITE_DOOR.get())
+                .add(ModBlocks.CRYSTALLIZER.get());
 
         this.tag(BlockTags.NEEDS_IRON_TOOL)
                 .add(ModBlocks.AZURITE_DEEPSLATE_ORE.get());

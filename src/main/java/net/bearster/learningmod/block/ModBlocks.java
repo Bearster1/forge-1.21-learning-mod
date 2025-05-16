@@ -94,6 +94,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> TRIFORCE = registerBlock("triforce",
             () -> new TriforceBlock(BlockBehaviour.Properties.of().strength(4f).noOcclusion()));
 
+    public static final RegistryObject<Block> CRYSTALLIZER = registerBlock("crystallizer",
+            () -> new CrystallizerBlock(BlockBehaviour.Properties.of().strength(3f).requiresCorrectToolForDrops()));
+
 
 
 

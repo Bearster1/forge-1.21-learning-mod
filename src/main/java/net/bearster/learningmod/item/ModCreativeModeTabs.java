@@ -101,6 +101,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.PEDESTAL.get());
 
+                        output.accept(ModBlocks.CRYSTALLIZER.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",

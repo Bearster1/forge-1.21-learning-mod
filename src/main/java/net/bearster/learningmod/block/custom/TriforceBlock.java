@@ -8,7 +8,7 @@ import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class TriforceBlock extends Block {
-    public static final VoxelShape SHAPE = Block.box(1, 0, 6, 15, 14, 10);
+    public static final VoxelShape SHAPE = Block.box(1, 0, 7, 15, 14, 11);
 
     public TriforceBlock(Properties properties) {
         super(properties);
