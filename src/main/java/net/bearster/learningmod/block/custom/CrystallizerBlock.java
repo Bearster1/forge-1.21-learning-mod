@@ -1,7 +1,16 @@
 package net.bearster.learningmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
+import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.item.ModItems;
+import net.minecraft.core.BlockPos;
+import net.minecraft.core.particles.BlockParticleOption;
+import net.minecraft.core.particles.ItemParticleOption;
+import net.minecraft.core.particles.ParticleType;
+import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.item.context.BlockPlaceContext;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -29,5 +38,19 @@ public class CrystallizerBlock extends HorizontalDirectionalBlock {
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> pBuilder) {
         pBuilder.add(FACING);
+    }
+
+    @Override
+    public void animateTick(BlockState pState, Level pLevel, BlockPos pPos, RandomSource pRandom) {
+        // HERE WE ARE CLIENT ONLY
+        double xPos = pPos.getX() + 0.5f;
+        double yPos = pPos.getY() + 1.25f;
+        double zPos = pPos.getZ() + 0.5f;
+        double offset = pRandom.nextDouble() * 0.6 - 0.3;
+
+        pLevel.addParticle(ParticleTypes.CAMPFIRE_SIGNAL_SMOKE, xPos + offset, yPos, zPos + offset, 0.0, 0.1, 0.0);
+        pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.MAGIC_BLOCK.get().defaultBlockState()),
+                xPos + offset, yPos, zPos + offset, 0.0, 0.0, 0.0);
+
     }
 }
