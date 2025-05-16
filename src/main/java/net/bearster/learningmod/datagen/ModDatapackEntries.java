@@ -1,6 +1,7 @@
 package net.bearster.learningmod.datagen;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.enchantment.ModEnchantments;
 import net.bearster.learningmod.trim.ModTrimMaterials;
 import net.bearster.learningmod.trim.ModTrimPatterns;
 import net.minecraft.core.HolderLookup;
@@ -15,7 +16,8 @@ import java.util.concurrent.CompletableFuture;
 public class ModDatapackEntries extends DatapackBuiltinEntriesProvider {
     public static final RegistrySetBuilder BUILDER = new RegistrySetBuilder()
             .add(Registries.TRIM_MATERIAL, ModTrimMaterials::bootstrap)
-            .add(Registries.TRIM_PATTERN, ModTrimPatterns::bootstrap);
+            .add(Registries.TRIM_PATTERN, ModTrimPatterns::bootstrap)
+            .add(Registries.ENCHANTMENT, ModEnchantments::bootstrap);
 
     public ModDatapackEntries(PackOutput output, CompletableFuture<HolderLookup.Provider> registries) {
         super(output, registries, BUILDER, Set.of(LearningMod.MOD_ID));
