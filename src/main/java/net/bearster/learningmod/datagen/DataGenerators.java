@@ -1,7 +1,6 @@
 package net.bearster.learningmod.datagen;
 
 import net.bearster.learningmod.LearningMod;
-import net.bearster.learningmod.datagen.paintings.ModPaintingGenerator;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
@@ -34,6 +33,5 @@ public class DataGenerators {
         generator.addProvider(event.includeClient(), new ModBlockStateProvider(packOutput, existingFileHelper));
 
         generator.addProvider(event.includeServer(), new ModDatapackEntries(packOutput, lookupProvider));
-        ModPaintingGenerator.createPaintings();
     }
 }

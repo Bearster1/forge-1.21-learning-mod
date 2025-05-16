@@ -77,25 +77,27 @@
 
   "effect.learningmod.slimey": "Slimey",
 
-  "creativetab.azurite_items": "Azurite Items",
-  "creativetab.azurite_blocks": "Azurite Blocks",
-  "creativetab.custom": "Custom Tab",
-
-  "trim_pattern.learningmod.kaupen": "Kaupen Armor Trim",
-  "trim_material.learningmod.azurite": "Azurite Material",
-
   "painting.learningmod.world.title": "World",
   "painting.learningmod.world.author": "NanoAttack",
   "painting.learningmod.shrimp.title": "Shrimp",
   "painting.learningmod.shrimp.author": "NanoAttack",
   "painting.learningmod.saw_them.title": "Saw Them",
   "painting.learningmod.saw_them.author": "NanoAttack",
-
   "painting.learningmod.wanderer.title": "Wanderer",
   "painting.learningmod.wanderer.author": "PlatinumG17",
 
   "painting.learningmod.jojo_botw.title": "J0J0Jetz in BOTW",
   "painting.learningmod.jojo_botw.author": "J0J0Jetz",
+
+  "painting.learningmod.jojo_knight.title": "J0J0Jetz Getting Knighted",
+  "painting.learningmod.jojo_knight.author": "HobbyBox",
+
+  "creativetab.azurite_items": "Azurite Items",
+  "creativetab.azurite_blocks": "Azurite Blocks",
+  "creativetab.custom": "Custom Tab",
+
+  "trim_pattern.learningmod.kaupen": "Kaupen Armor Trim",
+  "trim_material.learningmod.azurite": "Azurite Material",
 
   "entity.minecraft.villager.learningmod.kaupenger": "Kaupenger",
 
