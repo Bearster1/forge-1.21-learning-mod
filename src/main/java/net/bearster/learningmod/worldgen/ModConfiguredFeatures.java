@@ -9,7 +9,11 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.levelgen.GeodeBlockSettings;
+import net.minecraft.world.level.levelgen.GeodeCrackSettings;
+import net.minecraft.world.level.levelgen.GeodeLayerSettings;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.*;
@@ -34,6 +38,8 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_AZURITE_ORE_KEY = registerKey("end_azurite_ore");
 
     public static final ResourceKey<ConfiguredFeature<?, ?>> CATMINT_KEY = registerKey("catmint");
+
+    public static final ResourceKey<ConfiguredFeature<?, ?>> AZURITE_GEODE_KEY = registerKey("azurite_geode");
 
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
@@ -66,6 +72,21 @@ public class ModConfiguredFeatures {
         register(context, CATMINT_KEY, Feature.FLOWER,
                 new RandomPatchConfiguration(32, 6, 2, PlacementUtils.onlyWhenEmpty(Feature.SIMPLE_BLOCK,
                         new SimpleBlockConfiguration(BlockStateProvider.simple(ModBlocks.CATMINT.get())))));
+
+        register(context, AZURITE_GEODE_KEY, Feature.GEODE,
+                new GeodeConfiguration(new GeodeBlockSettings(BlockStateProvider.simple(Blocks.AIR),
+                        BlockStateProvider.simple(ModBlocks.MAGIC_BLOCK.get()),
+                        BlockStateProvider.simple(ModBlocks.AZURITE_ORE.get()),
+                        BlockStateProvider.simple(ModBlocks.AZURITE_BLOCK.get()),
+                        BlockStateProvider.simple(Blocks.TUFF),
+                        List.of(ModBlocks.AZURITE_LAMP.get().defaultBlockState()),
+                        BlockTags.FEATURES_CANNOT_REPLACE , BlockTags.GEODE_INVALID_BLOCKS),
+
+                        new GeodeLayerSettings(1.7D, 1.2D, 2.5D, 3.5D),
+                        new GeodeCrackSettings(0.25D, 1.5D, 1), 0.5D, 0.1D,
+                        true, UniformInt.of(3, 8),
+                        UniformInt.of(2, 6), UniformInt.of(1, 2),
+                        -18, 18, 0.075D, 1));
 
     }
 
