@@ -24,6 +24,7 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider provider) {
+
         tag(ModTags.Items.TRANSFORMABLE_ITEMS)
                 .add(ModItems.AZURITE.get())
                 .add(ModItems.RAW_AZURITE.get())

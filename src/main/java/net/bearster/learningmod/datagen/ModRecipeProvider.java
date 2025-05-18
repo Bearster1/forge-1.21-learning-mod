@@ -3,12 +3,14 @@ package net.bearster.learningmod.datagen;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.recipes.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
+import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
 
 import java.util.List;
