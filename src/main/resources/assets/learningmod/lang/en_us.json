@@ -80,6 +80,15 @@
 
   "block.learningmod.crystallizer": "Crystallizer",
 
+  "block.learningmod.balsa_log": "Balsa Log",
+  "block.learningmod.balsa_wood": "Balsa Wood",
+  "block.learningmod.stripped_balsa_log": "Stripped Balsa Log",
+  "block.learningmod.stripped_balsa_wood": "Stripped Balsa Wood",
+  "block.learningmod.balsa_planks": "Balsa Planks",
+  "block.learningmod.balsa_leaves": "Balsa Leaves",
+  "block.learningmod.balsa_sapling": "Balsa Sapling",
+
+
   "effect.learningmod.slimey": "Slimey",
 
   "painting.learningmod.world.title": "World",

@@ -12,8 +12,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.concurrent.CompletableFuture;
 
-public class ModBlockTagProvider extends BlockTagsProvider {
-    public ModBlockTagProvider(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
+public class ModBlockTagGenerator extends BlockTagsProvider {
+    public ModBlockTagGenerator(PackOutput output, CompletableFuture<HolderLookup.Provider> lookupProvider, @Nullable ExistingFileHelper existingFileHelper) {
         super(output, lookupProvider, LearningMod.MOD_ID, existingFileHelper);
     }
 
@@ -51,6 +51,12 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .addTag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .addTag(BlockTags.MINEABLE_WITH_SHOVEL)
                 .addTag(BlockTags.MINEABLE_WITH_AXE);
+
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.BALSA_LOG.get())
+                .add(ModBlocks.BALSA_WOOD.get())
+                .add(ModBlocks.STRIPPED_BALSA_LOG.get())
+                .add(ModBlocks.STRIPPED_BALSA_WOOD.get());
     }
 
 }
