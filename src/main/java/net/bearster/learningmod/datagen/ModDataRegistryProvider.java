@@ -2,8 +2,6 @@ package net.bearster.learningmod.datagen;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.enchantment.ModEnchantments;
-import net.bearster.learningmod.trim.ModTrimMaterials;
-import net.bearster.learningmod.trim.ModTrimPatterns;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
