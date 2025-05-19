@@ -13,6 +13,8 @@ import net.bearster.learningmod.potion.ModPotions;
 import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
 import net.bearster.learningmod.villager.ModVillagers;
+import net.bearster.learningmod.worldgen.biome.ModBiomes;
+import net.bearster.learningmod.worldgen.biome.ModSurfaceRules;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -35,6 +37,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
+import terrablender.api.SurfaceRuleManager;
 
 // The value here should match an entry in the META-INF/mods.toml file
 @Mod(LearningMod.MOD_ID)
@@ -87,6 +90,13 @@ public class LearningMod
             ComposterBlock.COMPOSTABLES.put(ModItems.ONION_SEEDS.get(), 0.35f);
 
             ((FlowerPotBlock) Blocks.FLOWER_POT).addPlant(ModBlocks.CATMINT.getId(), ModBlocks.POTTED_CATMINT);
+
+            ModBiomes.registerBiomes();
+
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.OVERWORLD, MOD_ID, ModSurfaceRules.makeKaupenValleyRules());
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.NETHER, MOD_ID, ModSurfaceRules.makeGlowstonePlainsRules());
+            SurfaceRuleManager.addSurfaceRules(SurfaceRuleManager.RuleCategory.END, MOD_ID, ModSurfaceRules.makeEndRotRules());
+
         });
     }
 
