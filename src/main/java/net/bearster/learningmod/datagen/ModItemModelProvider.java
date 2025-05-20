@@ -1,5 +1,6 @@
 package net.bearster.learningmod.datagen;
 
+import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.fluid.ModFluids;
@@ -21,10 +22,12 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import org.checkerframework.checker.units.qual.N;
+import org.slf4j.Logger;
 
 import java.util.LinkedHashMap;
 
 public class ModItemModelProvider extends ItemModelProvider {
+
 
     private static LinkedHashMap<ResourceKey<TrimMaterial>, Float> trimMaterials = new LinkedHashMap<>();
     static {
@@ -46,6 +49,8 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        Logger LOGGER = LogUtils.getLogger();
+        LOGGER.info("A");
         basicItem(ModItems.AZURITE.get());
         basicItem(ModItems.RAW_AZURITE.get());
 
