@@ -1,5 +1,6 @@
 package net.bearster.learningmod.datagen;
 
+import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.item.ModItems;
@@ -12,6 +13,7 @@ import net.minecraft.world.item.crafting.*;
 import net.minecraft.world.level.ItemLike;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.crafting.conditions.IConditionBuilder;
+import org.slf4j.Logger;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -25,7 +27,6 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
         List<ItemLike> AZURITE_SMELTABLES = List.of(ModItems.RAW_AZURITE.get(),
                 ModBlocks.AZURITE_ORE.get(), ModBlocks.AZURITE_DEEPSLATE_ORE.get(), ModBlocks.AZURITE_END_ORE.get(), ModBlocks.AZURITE_NETHER_ORE.get());
-
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.AZURITE_BLOCK.get())
                 .pattern("AAA")
