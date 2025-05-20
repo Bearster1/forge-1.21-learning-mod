@@ -130,7 +130,9 @@
 
   "tooltip.learningmod.magic_block.tooltip.1": "This Block is §9MAGICAL§r",
 
-  "item.learningmod.metal_detector.no_valuables": "No Valuables Found!"
+  "item.learningmod.metal_detector.no_valuables": "No Valuables Found!",
+
+  "name.learningmod.pedestal_be": "Pedestal"
 
 
 }

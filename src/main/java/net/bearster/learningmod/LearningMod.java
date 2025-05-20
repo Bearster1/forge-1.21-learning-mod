@@ -12,11 +12,14 @@ import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.potion.ModPotions;
+import net.bearster.learningmod.screen.ModMenuTypes;
+import net.bearster.learningmod.screen.custom.PedestalScreen;
 import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
 import net.bearster.learningmod.villager.ModVillagers;
 import net.bearster.learningmod.worldgen.biome.ModBiomes;
 import net.bearster.learningmod.worldgen.biome.ModSurfaceRules;
+import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -82,6 +85,8 @@ public class LearningMod
 
         ModBlockEntities.register(modEventBus);
 
+        ModMenuTypes.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
@@ -134,6 +139,8 @@ public class LearningMod
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.SOURCE_AZURITE_WATER.get(), RenderType.translucent());
                 ItemBlockRenderTypes.setRenderLayer(ModFluids.FLOWING_AZURITE_WATER.get(), RenderType.translucent());
             });
+
+            MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
 
         }
 
