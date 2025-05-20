@@ -2,6 +2,7 @@ package net.bearster.learningmod;
 
 import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.block.entity.custom.ModBlockEntities;
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.effect.ModEffects;
 import net.bearster.learningmod.enchantment.ModEnchantmentEffects;
@@ -76,6 +77,8 @@ public class LearningMod
         ModFluids.register(modEventBus);
 
         ModEnchantmentEffects.register(modEventBus);
+
+        ModBlockEntities.register(modEventBus);
 
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
