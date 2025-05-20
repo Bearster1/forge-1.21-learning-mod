@@ -3,6 +3,7 @@ package net.bearster.learningmod;
 import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.block.ModBlocks;
 import net.bearster.learningmod.block.entity.custom.ModBlockEntities;
+import net.bearster.learningmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.effect.ModEffects;
 import net.bearster.learningmod.enchantment.ModEnchantmentEffects;
@@ -25,6 +26,7 @@ import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ComposterBlock;
 import net.minecraft.world.level.block.FlowerPotBlock;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.crafting.conditions.ICondition;
@@ -145,6 +147,11 @@ public class LearningMod
         public static void registerColoredItems(RegisterColorHandlersEvent.Item event) {
             event.register((pStack, pTintIndex) -> FoliageColor.getDefaultColor(), ModBlocks.COLORED_LEAVES.get());
 
+        }
+
+        @SubscribeEvent
+        public static void registerBER(EntityRenderersEvent.RegisterRenderers event) {
+            event.registerBlockEntityRenderer(ModBlockEntities.PEDESTAL_BE.get(), PedestalBlockEntityRenderer::new);
         }
     }
 }
