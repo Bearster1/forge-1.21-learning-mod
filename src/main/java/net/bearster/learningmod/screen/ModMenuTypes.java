@@ -1,6 +1,7 @@
 package net.bearster.learningmod.screen;
 
 import net.bearster.learningmod.LearningMod;
+import net.bearster.learningmod.screen.custom.CrystallizerMenu;
 import net.bearster.learningmod.screen.custom.PedestalMenu;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.MenuType;
@@ -17,6 +18,9 @@ public class ModMenuTypes {
 
     public static final RegistryObject<MenuType<PedestalMenu>> PEDESTAL_MENU =
             registerMenuType("pedestal_menu", PedestalMenu::new);
+
+    public static final RegistryObject<MenuType<CrystallizerMenu>> CRYSTALLIZER_MENU =
+            registerMenuType("crystallizer_menu", CrystallizerMenu::new);
 
     private static <T extends AbstractContainerMenu>RegistryObject<MenuType<T>> registerMenuType(String name,
                                                                                                  IContainerFactory<T> factory) {

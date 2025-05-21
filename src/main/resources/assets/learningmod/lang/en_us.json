@@ -132,7 +132,8 @@
 
   "item.learningmod.metal_detector.no_valuables": "No Valuables Found!",
 
-  "name.learningmod.pedestal_be": "Pedestal"
+  "name.learningmod.pedestal_be": "Pedestal",
+  "name.learningmod.crystallizer": "Crystallizer"
 
 
 }

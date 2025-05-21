@@ -2,7 +2,7 @@ package net.bearster.learningmod;
 
 import com.mojang.logging.LogUtils;
 import net.bearster.learningmod.block.ModBlocks;
-import net.bearster.learningmod.block.entity.custom.ModBlockEntities;
+import net.bearster.learningmod.block.entity.ModBlockEntities;
 import net.bearster.learningmod.block.entity.renderer.PedestalBlockEntityRenderer;
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.effect.ModEffects;
@@ -13,6 +13,7 @@ import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.potion.ModPotions;
 import net.bearster.learningmod.screen.ModMenuTypes;
+import net.bearster.learningmod.screen.custom.CrystallizerScreen;
 import net.bearster.learningmod.screen.custom.PedestalScreen;
 import net.bearster.learningmod.sound.ModSounds;
 import net.bearster.learningmod.util.ModItemProperties;
@@ -32,12 +33,10 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.client.event.RegisterColorHandlersEvent;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.crafting.conditions.ICondition;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
@@ -141,6 +140,7 @@ public class LearningMod
             });
 
             MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
+            MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
 
         }
 

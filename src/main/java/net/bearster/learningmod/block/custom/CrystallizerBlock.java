@@ -2,30 +2,48 @@ package net.bearster.learningmod.block.custom;
 
 import com.mojang.serialization.MapCodec;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.block.entity.ModBlockEntities;
+import net.bearster.learningmod.block.entity.custom.CrystallizerBlockEntity;
 import net.bearster.learningmod.item.ModItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ItemParticleOption;
 import net.minecraft.core.particles.ParticleType;
 import net.minecraft.core.particles.ParticleTypes;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.RandomSource;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.ItemInteractionResult;
+import net.minecraft.world.SimpleMenuProvider;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BaseEntityBlock;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.HorizontalDirectionalBlock;
+import net.minecraft.world.level.block.RenderShape;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.DirectionProperty;
+import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.Nullable;
 
-public class CrystallizerBlock extends HorizontalDirectionalBlock {
+public class CrystallizerBlock extends BaseEntityBlock {
     public static final MapCodec<CrystallizerBlock> CODEC = simpleCodec(CrystallizerBlock::new);
+    public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 
     public CrystallizerBlock(Properties pProperties) {
         super(pProperties);
     }
 
     @Override
-    protected MapCodec<? extends HorizontalDirectionalBlock> codec() {
+    protected MapCodec<? extends BaseEntityBlock> codec() {
         return CODEC;
     }
 
@@ -52,5 +70,52 @@ public class CrystallizerBlock extends HorizontalDirectionalBlock {
         pLevel.addParticle(new BlockParticleOption(ParticleTypes.BLOCK, ModBlocks.MAGIC_BLOCK.get().defaultBlockState()),
                 xPos + offset, yPos, zPos + offset, 0.0, 0.0, 0.0);
 
+    }
+
+    @Override
+    protected RenderShape getRenderShape(BlockState pState) {
+        return RenderShape.MODEL;
+    }
+
+    @Override
+    public @Nullable BlockEntity newBlockEntity(BlockPos blockPos, BlockState blockState) {
+        return new CrystallizerBlockEntity(blockPos, blockState);
+    }
+
+    @Override
+    public void onRemove(BlockState pState, Level pLevel, BlockPos pPos, BlockState pNewState, boolean pIsMoving) {
+        if (pState.getBlock() != pNewState.getBlock()) {
+            BlockEntity blockEntity = pLevel.getBlockEntity(pPos);
+            if (blockEntity instanceof CrystallizerBlockEntity crystallizerBlockEntity) {
+                crystallizerBlockEntity.drops();
+            }
+        }
+
+        super.onRemove(pState, pLevel, pPos, pNewState, pIsMoving);
+    }
+
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack pStack, BlockState pState, Level pLevel, BlockPos pPos,
+                                              Player pPlayer, InteractionHand pHand, BlockHitResult pHitResult) {
+        if (!pLevel.isClientSide()) {
+            BlockEntity entity = pLevel.getBlockEntity(pPos);
+            if(entity instanceof CrystallizerBlockEntity crystallizerBlockEntity) {
+                ((ServerPlayer) pPlayer).openMenu(new SimpleMenuProvider(crystallizerBlockEntity, Component.literal("Crystallizer")), pPos);
+            } else {
+                throw new IllegalStateException("Our Container provider is missing!");
+            }
+        }
+
+        return ItemInteractionResult.sidedSuccess(pLevel.isClientSide());
+    }
+
+    @Override
+    public @Nullable <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level pLevel, BlockState pState, BlockEntityType<T> pBlockEntityType) {
+        if (pLevel.isClientSide()) {
+            return null;
+        }
+
+        return createTickerHelper(pBlockEntityType, ModBlockEntities.CRYSTALLIZER_BE.get(),
+                (level, blockPos, blockState, crystallizerBlockEntity) -> crystallizerBlockEntity.tick(level,blockPos,blockState));
     }
 }

@@ -1,7 +1,9 @@
-package net.bearster.learningmod.block.entity.custom;
+package net.bearster.learningmod.block.entity;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.block.entity.custom.CrystallizerBlockEntity;
+import net.bearster.learningmod.block.entity.custom.PedestalBlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -15,6 +17,10 @@ public class ModBlockEntities {
     public static final RegistryObject<BlockEntityType<PedestalBlockEntity>> PEDESTAL_BE =
             BLOCK_ENTITIES.register("pedestal_be", () -> BlockEntityType.Builder.of(
                     PedestalBlockEntity::new, ModBlocks.PEDESTAL.get()).build(null));
+
+    public static final RegistryObject<BlockEntityType<CrystallizerBlockEntity>> CRYSTALLIZER_BE =
+            BLOCK_ENTITIES.register("crystallizer_be", () -> BlockEntityType.Builder.of(
+                    CrystallizerBlockEntity::new, ModBlocks.CRYSTALLIZER.get()).build(null));
 
     public static void register(IEventBus eventBus) {
         BLOCK_ENTITIES.register(eventBus);
