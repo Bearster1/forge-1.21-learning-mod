@@ -12,6 +12,7 @@ import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.potion.ModPotions;
+import net.bearster.learningmod.recipe.ModRecipes;
 import net.bearster.learningmod.screen.ModMenuTypes;
 import net.bearster.learningmod.screen.custom.CrystallizerScreen;
 import net.bearster.learningmod.screen.custom.PedestalScreen;
@@ -86,6 +87,8 @@ public class LearningMod
 
         ModMenuTypes.register(modEventBus);
 
+        ModRecipes.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
@@ -113,7 +116,7 @@ public class LearningMod
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+        if(event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.AZURITE);
             event.accept(ModItems.RAW_AZURITE);
         }
@@ -128,8 +131,7 @@ public class LearningMod
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
     @Mod.EventBusSubscriber(modid = MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
-    public static class ClientModEvents
-    {
+    public static class ClientModEvents {
         @SubscribeEvent
         public static void onClientSetup(FMLClientSetupEvent event) {
             ModItemProperties.addCustomItemProperties();
