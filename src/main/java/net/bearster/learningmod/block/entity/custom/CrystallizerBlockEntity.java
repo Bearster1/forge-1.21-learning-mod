@@ -3,6 +3,9 @@ package net.bearster.learningmod.block.entity.custom;
 import net.bearster.learningmod.block.custom.CrystallizerBlock;
 import net.bearster.learningmod.block.entity.ModBlockEntities;
 import net.bearster.learningmod.item.ModItems;
+import net.bearster.learningmod.recipe.CrystallizerRecipe;
+import net.bearster.learningmod.recipe.CrystallizerRecipeInput;
+import net.bearster.learningmod.recipe.ModRecipes;
 import net.bearster.learningmod.screen.custom.CrystallizerMenu;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -20,6 +23,7 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ContainerData;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
@@ -32,12 +36,14 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Optional;
+
 public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider {
     public final ItemStackHandler itemHandler = new ItemStackHandler(4) {
         @Override
         protected void onContentsChanged(int slot) {
             setChanged();
-            if (!level.isClientSide()) {
+            if(!level.isClientSide()) {
                 level.sendBlockUpdated(getBlockPos(), getBlockState(), getBlockState(), 3);
             }
         }
@@ -87,8 +93,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         return Component.translatable("name.learningmod.crystallizer");
     }
 
+    @Nullable
     @Override
-    public @Nullable AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
+    public AbstractContainerMenu createMenu(int i, Inventory inventory, Player player) {
         return new CrystallizerMenu(i, inventory, this, this.data);
     }
 
@@ -133,6 +140,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         maxProgress = pTag.getInt("crystallizer.max_progress");
 
     }
+
     public void drops() {
         SimpleContainer inventory = new SimpleContainer(itemHandler.getSlots());
         for (int i = 0; i < itemHandler.getSlots(); i++) {
@@ -143,12 +151,12 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     public void tick(Level level, BlockPos pPos, BlockState pState) {
-        if (hasRecipe() && isOutputSlotEmptyOrReceivable()) {
+        if(hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
             level.setBlockAndUpdate(pPos, pState.setValue(CrystallizerBlock.LIT, true));
             setChanged(level, pPos, pState);
 
-            if (hasCraftingFinished()) {
+            if(hasCraftingFinished()) {
                 craftItem();
                 resetProgress();
             }
@@ -164,7 +172,8 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private void craftItem() {
-        ItemStack output = new ItemStack(ModItems.AZURITE.get());
+        Optional<RecipeHolder<CrystallizerRecipe>> recipe = getCurrentRecipe();
+        ItemStack output = recipe.get().value().output();
 
         itemHandler.extractItem(INPUT_SLOT, 1, false);
         itemHandler.setStackInSlot(OUTPUT_SLOT, new ItemStack(output.getItem(),
@@ -186,11 +195,18 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean hasRecipe() {
-        ItemStack input = new ItemStack(ModItems.RAW_AZURITE.get());
-        ItemStack output = new ItemStack(ModItems.AZURITE.get());
+        Optional<RecipeHolder<CrystallizerRecipe>> recipe = getCurrentRecipe();
+        if(recipe.isEmpty()) {
+            return false;
+        }
 
-        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output) &&
-                itemHandler.getStackInSlot(INPUT_SLOT).getItem() == input.getItem();
+        ItemStack output = recipe.get().value().getResultItem(null);
+        return canInsertAmountIntoOutputSlot(output.getCount()) && canInsertItemIntoOutputSlot(output);
+    }
+
+    private Optional<RecipeHolder<CrystallizerRecipe>> getCurrentRecipe() {
+        return this.level.getRecipeManager()
+                .getRecipeFor(ModRecipes.CRYSTALLIZER_TYPE.get(), new CrystallizerRecipeInput(itemHandler.getStackInSlot(INPUT_SLOT)), level);
     }
 
     private boolean canInsertItemIntoOutputSlot(ItemStack output) {
@@ -198,7 +214,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     }
 
     private boolean canInsertAmountIntoOutputSlot(int count) {
-        int maxCount = this.itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
+        int maxCount = itemHandler.getStackInSlot(OUTPUT_SLOT).isEmpty() ? 64 : itemHandler.getStackInSlot(OUTPUT_SLOT).getMaxStackSize();
         int currentCount = itemHandler.getStackInSlot(OUTPUT_SLOT).getCount();
 
         return maxCount >= currentCount + count;
@@ -210,8 +226,9 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
         return saveWithoutMetadata(pRegistries);
     }
 
+    @Nullable
     @Override
-    public @Nullable Packet<ClientGamePacketListener> getUpdatePacket() {
+    public Packet<ClientGamePacketListener> getUpdatePacket() {
         return ClientboundBlockEntityDataPacket.create(this);
     }
 }
