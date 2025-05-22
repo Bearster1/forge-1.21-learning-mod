@@ -1,5 +1,6 @@
 package net.bearster.learningmod.block.entity.custom;
 
+import net.bearster.learningmod.block.custom.CrystallizerBlock;
 import net.bearster.learningmod.block.entity.ModBlockEntities;
 import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.screen.custom.CrystallizerMenu;
@@ -144,6 +145,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
     public void tick(Level level, BlockPos pPos, BlockState pState) {
         if (hasRecipe() && isOutputSlotEmptyOrReceivable()) {
             increaseCraftingProgress();
+            level.setBlockAndUpdate(pPos, pState.setValue(CrystallizerBlock.LIT, true));
             setChanged(level, pPos, pState);
 
             if (hasCraftingFinished()) {
@@ -151,6 +153,7 @@ public class CrystallizerBlockEntity extends BlockEntity implements MenuProvider
                 resetProgress();
             }
         } else {
+            level.setBlockAndUpdate(pPos, pState.setValue(CrystallizerBlock.LIT, false));
             resetProgress();
         }
     }

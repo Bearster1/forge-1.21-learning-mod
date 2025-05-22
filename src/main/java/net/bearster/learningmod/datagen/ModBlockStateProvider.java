@@ -73,7 +73,7 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         leavesBlock(ModBlocks.COLORED_LEAVES);
 
-        horizontalBlock(ModBlocks.CRYSTALLIZER.get(), mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
+        // horizontalBlock(ModBlocks.CRYSTALLIZER.get(), mcLoc("block/blast_furnace_side"), modLoc("block/crystallizer_front"), mcLoc("block/blast_furnace_top"));
 
         logBlock(((RotatedPillarBlock) ModBlocks.BALSA_LOG.get()));
         axisBlock(((RotatedPillarBlock) ModBlocks.BALSA_WOOD.get()), blockTexture(ModBlocks.BALSA_LOG.get()), blockTexture(ModBlocks.BALSA_LOG.get()));
