@@ -17,6 +17,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 public class ModBiomeModifiers {
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_BALSA = registerKey("add_tree_balsa");
+    public static final ResourceKey<BiomeModifier> ADD_TREE_BALSA_TO_END = registerKey("add_tree_balsa_to_end");
 
     public static final ResourceKey<BiomeModifier> ADD_AZURITE_ORE = registerKey("add_azurite_ore");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_AZURITE_ORE = registerKey("add_nether_azurite_ore");
@@ -32,6 +33,11 @@ public class ModBiomeModifiers {
 
         context.register(ADD_TREE_BALSA, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
                 HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.SAVANNA)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BALSA_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION));
+
+        context.register(ADD_TREE_BALSA_TO_END, new ForgeBiomeModifiers.AddFeaturesBiomeModifier(
+                biomes.getOrThrow(BiomeTags.IS_END),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlacedFeatures.BALSA_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION));
 
