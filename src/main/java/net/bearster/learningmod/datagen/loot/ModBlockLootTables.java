@@ -85,6 +85,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
         this.dropSelf(ModBlocks.BALSA_SAPLING.get());
 
         this.add(ModBlocks.BALSA_LEAVES.get(),  block -> createLeavesDrops(block, ModBlocks.BALSA_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
+
+        this.dropSelf(ModBlocks.COAL_GENERATOR.get());
     }
 
     protected LootTable.Builder createMultipleOreDrops(Block pBlock, Item item, float minDrops, float maxDrops) {

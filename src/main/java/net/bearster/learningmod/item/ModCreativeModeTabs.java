@@ -117,6 +117,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.BALSA_LEAVES.get());
 
+                        output.accept(ModBlocks.COAL_GENERATOR.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> CUSTOM_TAB = CREATIVE_MODE_TABS.register("custom_tab",

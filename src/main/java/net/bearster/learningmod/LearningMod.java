@@ -14,6 +14,7 @@ import net.bearster.learningmod.item.ModItems;
 import net.bearster.learningmod.potion.ModPotions;
 import net.bearster.learningmod.recipe.ModRecipes;
 import net.bearster.learningmod.screen.ModMenuTypes;
+import net.bearster.learningmod.screen.custom.CoalGeneratorScreen;
 import net.bearster.learningmod.screen.custom.CrystallizerScreen;
 import net.bearster.learningmod.screen.custom.PedestalScreen;
 import net.bearster.learningmod.sound.ModSounds;
@@ -143,6 +144,7 @@ public class LearningMod
 
             MenuScreens.register(ModMenuTypes.PEDESTAL_MENU.get(), PedestalScreen::new);
             MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
+            MenuScreens.register(ModMenuTypes.COAL_GENERATOR_MENU.get(), CoalGeneratorScreen::new);
 
         }
 

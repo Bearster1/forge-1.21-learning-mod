@@ -154,6 +154,9 @@ public class ModBlocks {
     public static final RegistryObject<Block> BALSA_SAPLING = registerBlock("balsa_sapling",
             ()-> new ModSaplingBlock(ModTreeGrowers.BALSA,BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), Blocks.END_STONE));
 
+    public static final RegistryObject<Block> COAL_GENERATOR = registerBlock("coal_generator",
+            () -> new CoalGeneratorBlock(BlockBehaviour.Properties.of().strength(2f).requiresCorrectToolForDrops().randomTicks()));
+
 
 
     private static <T extends Block>RegistryObject<T> registerBlock(String name, Supplier<T> block) {

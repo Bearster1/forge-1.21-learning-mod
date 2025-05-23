@@ -90,6 +90,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.BALSA_LEAVES);
         saplingBlock(ModBlocks.BALSA_SAPLING);
 
+        blockWithItem(ModBlocks.COAL_GENERATOR);
+
     }
 
     private void leavesBlock(RegistryObject<Block> blockRegistryObject) {
