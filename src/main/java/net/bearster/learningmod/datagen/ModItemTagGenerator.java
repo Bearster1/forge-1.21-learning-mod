@@ -50,5 +50,11 @@ public class ModItemTagGenerator extends ItemTagsProvider {
 
         this.tag(ItemTags.PLANKS)
                 .add(ModBlocks.BALSA_PLANKS.get().asItem());
+
+        this.tag(ModTags.Items.BALSA_WOOD)
+                .add(ModBlocks.BALSA_LOG.get().asItem())
+                .add(ModBlocks.BALSA_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_BALSA_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_BALSA_WOOD.get().asItem());
     }
 }

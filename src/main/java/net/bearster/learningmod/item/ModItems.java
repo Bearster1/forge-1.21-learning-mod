@@ -107,7 +107,8 @@ public class ModItems {
             () -> new Item(new Item.Properties().stacksTo(1)));
 
     public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
-            () -> new Item(new Item.Properties().stacksTo(1)));
+            () -> new SwordItem(Tiers.NETHERITE, new Item.Properties()
+                    .attributes(SwordItem.createAttributes(Tiers.NETHERITE, 20, -0.3f))));
 
 
 
