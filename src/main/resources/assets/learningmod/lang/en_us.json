@@ -42,6 +42,9 @@
   "item.learningmod.radiation_staff": "Radiation Staff",
   "item.learningmod.sword": "Sword",
 
+  "item.learningmod.capybara_spawn_egg": "Capybara Spawn Egg",
+  "item.learningmod.firefighter_spawn_egg": "Firefighter Spawn Egg",
+
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
@@ -122,6 +125,8 @@
 
   "sounds.learningmod.chainsaw_cut": "Chainsaw Sounds",
   "sounds.learningmod.chainsaw_pull": "Pull Chainsaw Sounds",
+
+  "sounds.learningmod.firefighter": "Firefighter Sounds",
 
   "tooltip.learningmod.chainsaw.tooltip.shift": "Press §eshift§r for more information!",
   "tooltip.learningmod.chainsaw.tooltip.1": "This Chainsaw will cut down trees fast!",
