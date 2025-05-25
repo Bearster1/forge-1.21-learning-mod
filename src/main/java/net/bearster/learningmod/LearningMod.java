@@ -7,6 +7,9 @@ import net.bearster.learningmod.block.entity.renderer.PedestalBlockEntityRendere
 import net.bearster.learningmod.component.ModDataComponentTypes;
 import net.bearster.learningmod.effect.ModEffects;
 import net.bearster.learningmod.enchantment.ModEnchantmentEffects;
+import net.bearster.learningmod.entity.ModEntities;
+import net.bearster.learningmod.entity.client.CapybaraRenderer;
+import net.bearster.learningmod.entity.client.FirefighterRenderer;
 import net.bearster.learningmod.fluid.ModFluidTypes;
 import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
@@ -26,6 +29,7 @@ import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.level.FoliageColor;
 import net.minecraft.world.level.block.Blocks;
@@ -90,6 +94,8 @@ public class LearningMod
 
         ModRecipes.register(modEventBus);
 
+        ModEntities.register(modEventBus);
+
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
         // Register the item to a creative tab
@@ -146,6 +152,8 @@ public class LearningMod
             MenuScreens.register(ModMenuTypes.CRYSTALLIZER_MENU.get(), CrystallizerScreen::new);
             MenuScreens.register(ModMenuTypes.COAL_GENERATOR_MENU.get(), CoalGeneratorScreen::new);
 
+            EntityRenderers.register(ModEntities.CAPYBARA.get(), CapybaraRenderer::new);
+            EntityRenderers.register(ModEntities.FIREFIGHTER.get(), FirefighterRenderer::new);
         }
 
         @SubscribeEvent

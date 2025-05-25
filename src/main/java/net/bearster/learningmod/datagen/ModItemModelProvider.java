@@ -97,6 +97,9 @@ public class ModItemModelProvider extends ItemModelProvider {
         horizontalBlockItem(ModBlocks.CRYSTALLIZER);
 
         saplingItem(ModBlocks.BALSA_SAPLING);
+
+        withExistingParent(ModItems.CAPYBARA_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
+        withExistingParent(ModItems.FIREFIGHTER_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
     }
 
     private ItemModelBuilder saplingItem(RegistryObject<Block> item) {

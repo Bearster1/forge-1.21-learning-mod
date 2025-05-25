@@ -48,6 +48,13 @@
     ]
   },
 
+  "firefighter": {
+    "subtitle": "learningmod.firefighter",
+    "sounds": [
+      "learningmod:firefighter"
+    ]
+  },
+
   "bar_brawl": {
     "sounds": [
       {

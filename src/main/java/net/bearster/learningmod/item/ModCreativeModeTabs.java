@@ -64,6 +64,8 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModFluids.AZURITE_WATER_BUCKET.get());
 
+                        output.accept(ModItems.CAPYBARA_SPAWN_EGG.get());
+
                     }).build());
 
     public static final RegistryObject<CreativeModeTab> AZURITE_BLOCKS_TAB = CREATIVE_MODE_TABS.register("azurite_blocks_tab",
@@ -132,6 +134,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TRIFORCE.get());
 
                         output.accept(ModItems.SWORD.get());
+
+                        output.accept(ModItems.FIREFIGHTER_SPAWN_EGG.get());
 
                     }).build());
 

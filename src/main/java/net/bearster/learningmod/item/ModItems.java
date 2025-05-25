@@ -2,12 +2,14 @@ package net.bearster.learningmod.item;
 
 import net.bearster.learningmod.LearningMod;
 import net.bearster.learningmod.block.ModBlocks;
+import net.bearster.learningmod.entity.ModEntities;
 import net.bearster.learningmod.item.custom.*;
 import net.bearster.learningmod.sound.ModSounds;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.*;
+import net.minecraftforge.common.ForgeSpawnEggItem;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -109,6 +111,14 @@ public class ModItems {
     public static final RegistryObject<Item> SWORD = ITEMS.register("sword",
             () -> new SwordItem(Tiers.NETHERITE, new Item.Properties()
                     .attributes(SwordItem.createAttributes(Tiers.NETHERITE, 20, -0.3f))));
+
+    public static final RegistryObject<Item> CAPYBARA_SPAWN_EGG = ITEMS.register("capybara_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.CAPYBARA, 0x664216, 0xdeab1f,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> FIREFIGHTER_SPAWN_EGG = ITEMS.register("firefighter_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.FIREFIGHTER, 0xff0000, 0xffdfdf,
+                    new Item.Properties()));
 
 
 
