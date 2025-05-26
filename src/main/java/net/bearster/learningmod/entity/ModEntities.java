@@ -20,7 +20,7 @@ public class ModEntities {
 
     public static final RegistryObject<EntityType<FirefighterEntity>> FIREFIGHTER =
             ENTITY_TYPES.register("firefighter", () -> EntityType.Builder.of(FirefighterEntity::new, MobCategory.CREATURE)
-                    .sized(0.5f, 1.5f).build("firefighter"));
+                    .sized(0.75f, 1.8f).build("firefighter"));
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

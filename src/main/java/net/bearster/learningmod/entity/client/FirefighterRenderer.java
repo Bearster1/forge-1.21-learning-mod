@@ -23,7 +23,7 @@ public class FirefighterRenderer extends MobRenderer<FirefighterEntity, Firefigh
     @Override
     public void render(FirefighterEntity pEntity, float pEntityYaw, float pPartialTicks, PoseStack pPoseStack, MultiBufferSource pBuffer, int pPackedLight) {
         if (pEntity.isBaby()) {
-            pPoseStack.scale(0.75f, 0.75f, 0.75f);
+            pPoseStack.scale(0.5f, 0.5f, 0.5f);
         }
 
         super.render(pEntity, pEntityYaw, pPartialTicks, pPoseStack, pBuffer, pPackedLight);
