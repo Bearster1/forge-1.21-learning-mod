@@ -65,6 +65,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModFluids.AZURITE_WATER_BUCKET.get());
 
                         output.accept(ModItems.CAPYBARA_SPAWN_EGG.get());
+                        output.accept(ModItems.GIRAFFE_SPAWN_EGG.get());
 
                     }).build());
 
@@ -136,6 +137,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.SWORD.get());
 
                         output.accept(ModItems.FIREFIGHTER_SPAWN_EGG.get());
+                        output.accept(ModItems.FIRE_TRUCK_SPAWN_EGG.get());
 
                     }).build());
 

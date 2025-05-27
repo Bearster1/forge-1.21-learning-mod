@@ -9,7 +9,9 @@ import net.bearster.learningmod.effect.ModEffects;
 import net.bearster.learningmod.enchantment.ModEnchantmentEffects;
 import net.bearster.learningmod.entity.ModEntities;
 import net.bearster.learningmod.entity.client.CapybaraRenderer;
+import net.bearster.learningmod.entity.client.FireTruckRenderer;
 import net.bearster.learningmod.entity.client.FirefighterRenderer;
+import net.bearster.learningmod.entity.client.GiraffeRenderer;
 import net.bearster.learningmod.fluid.ModFluidTypes;
 import net.bearster.learningmod.fluid.ModFluids;
 import net.bearster.learningmod.item.ModCreativeModeTabs;
@@ -154,6 +156,9 @@ public class LearningMod
 
             EntityRenderers.register(ModEntities.CAPYBARA.get(), CapybaraRenderer::new);
             EntityRenderers.register(ModEntities.FIREFIGHTER.get(), FirefighterRenderer::new);
+
+            EntityRenderers.register(ModEntities.GIRAFFE.get(), GiraffeRenderer::new);
+            EntityRenderers.register(ModEntities.FIRE_TRUCK.get(), FireTruckRenderer::new);
         }
 
         @SubscribeEvent

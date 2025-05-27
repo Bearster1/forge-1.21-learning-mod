@@ -45,6 +45,9 @@
   "item.learningmod.capybara_spawn_egg": "Capybara Spawn Egg",
   "item.learningmod.firefighter_spawn_egg": "Firefighter Spawn Egg",
 
+  "item.learningmod.giraffe_spawn_egg": "Giraffe Spawn Egg",
+  "item.learningmod.fire_truck_spawn_egg": "Fire Truck Spawn Egg",
+
   "item.minecraft.potion.effect.slimey_potion": "Slimey Potion",
   "item.minecraft.splash_potion.effect.slimey_potion": "Slimey Splash Potion",
   "item.minecraft.lingering_potion.effect.slimey_potion": "Slimey Lingering Potion",
@@ -141,7 +144,10 @@
   "item.learningmod.metal_detector.no_valuables": "No Valuables Found!",
 
   "name.learningmod.pedestal_be": "Pedestal",
-  "name.learningmod.crystallizer": "Crystallizer"
+  "name.learningmod.crystallizer": "Crystallizer",
+
+  "entity.learningmod.giraffe": "Giraffe",
+  "entity.learningmod.fire_truck": "Fire Truck"
 
 
 }

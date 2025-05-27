@@ -120,6 +120,14 @@ public class ModItems {
             () -> new ForgeSpawnEggItem(ModEntities.FIREFIGHTER, 0xb7340e, 0xe6ce18,
                     new Item.Properties()));
 
+    public static final RegistryObject<Item> GIRAFFE_SPAWN_EGG = ITEMS.register("giraffe_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.GIRAFFE, 0xe7d7a5, 0x7e5b41,
+                    new Item.Properties()));
+
+    public static final RegistryObject<Item> FIRE_TRUCK_SPAWN_EGG = ITEMS.register("fire_truck_spawn_egg",
+            () -> new ForgeSpawnEggItem(ModEntities.FIRE_TRUCK, 0xb02e26, 0xd8d8d8,
+                    new Item.Properties()));
+
 
 
     public static void register(IEventBus eventBus) {

@@ -135,7 +135,6 @@ public class CapybaraEntity extends Animal {
     @Override
     public SpawnGroupData finalizeSpawn(ServerLevelAccessor pLevel, DifficultyInstance pDifficulty, MobSpawnType pSpawnType, @Nullable SpawnGroupData pSpawnGroupData) {
         CapybaraVariant variant = Util.getRandom(CapybaraVariant.values(), this.random);
-        LOGGER.info(variant.toString() + variant.getId());
         this.setVariant(variant);
 
         return super.finalizeSpawn(pLevel, pDifficulty, pSpawnType, pSpawnGroupData);
