@@ -10,7 +10,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashMap;
+import java.util.List;
+import java.util.Map;
 
 public class ModPaintings {
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -21,12 +24,12 @@ public class ModPaintings {
     public void makePainting(String paintingName, int height, int width) {
         // Create painting JSON object
         Map<String, Object> painting = new LinkedHashMap<>();
-        painting.put("asset_id", "learningmod:" + paintingName);
+        painting.put("asset_id", "examplemod:" + paintingName);
         painting.put("height", height);
         painting.put("width", width);
 
         // Path for painting file
-        Path paintingPath = Paths.get("D:\\Codeing\\Java\\Minecraft\\forge-1.21.1-learning-mod\\src\\main\\resources\\data\\learningmod\\painting_variant", paintingName + ".json");
+        Path paintingPath = Paths.get(paintingDataPath, paintingName + ".json");
 
         try {
             Files.createDirectories(paintingPath.getParent());
@@ -39,13 +42,13 @@ public class ModPaintings {
         }
 
         // Add to tag values
-        paintings.add("learningmod:" + paintingName);
+        paintings.add("examplemod:" + paintingName);
 
         // Create placeable tag JSON
         Map<String, Object> placeable = new LinkedHashMap<>();
         placeable.put("values", paintings);
 
-        Path tagPath = Paths.get("D:\\Codeing\\Java\\Minecraft\\forge-1.21.1-learning-mod\\src\\main\\resources\\data\\minecraft\\tags\\painting_variant\\placeable.json");
+        Path tagPath = Paths.get(placeableDataPath);
 
         try {
             Files.createDirectories(tagPath.getParent());
@@ -57,6 +60,9 @@ public class ModPaintings {
             LOGGER.error("Failed to write placeable tag JSON: {}", e.getMessage(), e);
         }
     }
+
+    private String paintingDataPath = "D:\\Codeing\\Java\\Minecraft\\forge-1.21.1-learning-mod\\src\\main\\resources\\data\\examplemod\\painting_variant"; // Change this line. You want to change the path
+    private String placeableDataPath = "D:\\Codeing\\Java\\Minecraft\\forge-1.21.1-learning-mod\\src\\main\\resources\\data\\minecraft\\tags\\painting_variant\\placeable.json"; // Change this line. You want to change the path
 
     public void registerPaintings() {
         LOGGER.info("Registering paintings...");
