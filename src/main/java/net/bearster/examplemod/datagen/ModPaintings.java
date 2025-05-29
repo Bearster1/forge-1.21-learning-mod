@@ -45,9 +45,13 @@ public class ModPaintings {
             LOGGER.error("Failed to write painting JSON: {}", e.getMessage(), e);
         }
 
+        // Add to tag values
+        paintings.add("examplemod:" + paintingName);
 
 
         // Create placeable tag JSON
+        Map<String, Object> placeable = new LinkedHashMap<>();
+        placeable.put("values", paintings);
 
         placeable.put("values", MOD_ID+":"+paintingName);
 
